@@ -62,10 +62,10 @@
 ## Build — make the product
 | Skill | What it does |
 |---|---|
-| `venture-bootstrap` | Scaffolds a validated venture's technical foundation (blocks on unclosed economics). |
+| `venture-bootstrap` | Runs the buy-vs-build-vs-none decision first (default: off-the-shelf/no-code — storefront/booking/POS); scaffolds a technical foundation from `starters/saas` only on the custom-software branch. Blocks on unclosed economics. |
 | `setup-checklists` | Entity / banking / payments / compliance / ops checklists (flags professional-review points). Composes with `legal-pack` for the substantive legal layer. |
 | `product-spec` | Implementation-ready spec: stories, acceptance criteria, data model, test plan. |
-| `ship` | Executable build pipeline — clones `starters/saas`, builds the spec's features, tests/reviews to green, deploys to a live URL, wires Stripe. Deploy + payments-go-live are human-gated. |
+| `ship` | Executable build pipeline for the custom-software branch (off-the-shelf ventures skip it — they configure + manual-QA instead): clones `starters/saas`, builds the spec's features, tests/reviews to green, deploys to a live URL, wires Stripe. Deploy + payments-go-live are human-gated. |
 | `fable-brief` | **The capstone.** Consumes the whole venture (`product-spec` + `brand-design` tokens + the engineering/security backbone + the tool/MCP stack + every operational-setup output) and emits ONE self-contained, phased, PR-by-PR master build brief Fable executes — each PR with data model + RLS, endpoints (+ verify_jwt), Given/When/Then AC, tests, a security checklist, secrets (names only), dependencies, and human gates; plus the full workstream map, sequencing, and a coverage matrix that proves nothing is missed. |
 
 ## Dev subagents (`../agents/`)

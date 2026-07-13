@@ -20,7 +20,7 @@ and repeats the wedge from `/positioning` (or `/market-scan`).
 2. `founder-profile/voice-and-brand.md` — the voice every piece inherits + banned words.
 3. `founder-profile/operating-playbooks.md` — GTM (#4: owned audience, lead with the wedge), compound assets (#6).
 4. `founder-profile/delegation-protocol.md` — drafts-only, batch the report not the permission.
-5. `founder-profile/guardrails.md` — drafts-only publishing, no medical/legal claims, sourcing firewall.
+5. `founder-profile/guardrails.md` — drafts-only publishing, no regulated claims (health / financial / legal / environmental), sourcing firewall.
 6. Active `ventures/<slug>/venture-context.md` — channels, ICP, the wedge, brand deltas, cadence constraints.
 7. Sibling skills, if present: `/content-engine` — the system this rhythm runs; `/offer-architect` — the ladder/rungs every piece ladders toward; `/positioning` (or `/market-scan`) — the wedge each piece repeats.
 

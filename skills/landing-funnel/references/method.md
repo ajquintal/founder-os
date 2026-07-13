@@ -2,33 +2,44 @@
 
 One level deep; does not fan out further. Lenses: Brunson (funnels, the value ladder, one goal per page), Hormozi (offer stack). This skill specs *structure*; `/offer-architect` sets the offers and `/direct-response-copy` writes the sections.
 
-## Match the funnel shape to the offer
+## Match the funnel shape to the archetype (not a default DTC stack)
 
-| Entry offer | Funnel shape | Primary conversion |
+The funnel shape is read from the venture's archetype (it mirrors `/offer-architect`'s value-ladder shapes). The low-ticket tripwire/OTO stack is the **goods/DTC** case — one archetype, not the universal funnel.
+
+| Archetype | Funnel shape | Primary conversion |
 |---|---|---|
-| Free lead magnet | opt-in → nurture → tripwire | email captured |
-| Low-ticket tripwire | sales page → bump → OTO → recurring | purchase |
-| High-ticket / B2B | landing → application → booked call → manual close | qualified call booked |
+| **Goods / DTC** | sales page → bump → OTO → recurring (or: free lead magnet → opt-in → nurture → tripwire) | purchase |
+| **Services** | landing → diagnostic/pilot → engagement → retainer (application → booked call → manual close) | qualified call booked / pilot sold |
+| **Marketplace** | supply acquisition + demand acquisition → match / first transaction (take-rate) | first matched transaction |
+| **Subscription** | landing → free/trial → paid tier → expansion | trial-to-paid / subscribe |
 
-Forcing a high-ticket offer through a checkout-and-bump flow is the classic mistake — high-ticket closes on a call, so its "funnel" ends at a booked, qualified call, not a card charge.
+Forcing a high-ticket, marketplace, or two-sided offer through a checkout-and-bump flow is the classic mistake — services close on a call (the "funnel" ends at a booked, qualified call, not a card charge), and a marketplace has to acquire BOTH sides and prove liquidity with a match, not run a bump/OTO stack.
 
 ## Page sections (the on-page order)
 
 hero/hook → problem → mechanism → proof → offer/stack → risk reversal → objections/FAQ → final CTA. Each section carries a positioning pillar and earns its place by moving the reader toward the one CTA or removing one objection. If a section does neither, cut it — and don't over-build the page (Tony's standards-as-bottleneck failure mode cuts both ways).
 
-## Value-ladder flow (across pages)
+## Value-ladder flow (across pages) — archetype-conditional
+
+The flow below is the **goods/DTC** ladder (one archetype). Mirror `/offer-architect`'s shape for the venture's archetype:
 
 ```
-Entry → Order bump → OTO1 → OTO2 → Recurring → High-ticket backend
+Goods / DTC:   Entry → Order bump → OTO1 → OTO2 → Recurring → High-ticket backend
+Services:      Diagnostic / pilot → Core engagement → Retainer / expansion
+Marketplace:   Acquire one side → acquire the other → take a rate on the match  (NOT a bump/OTO stack)
+Subscription:  Free / trial → Paid tier → Expansion
 ```
 
 For each rung name: the page it lives on, its price (from `/offer-architect`), and the trigger that offers the next rung. Always know the next step up and why a buyer climbs it. **Price rule:** pull every price from `/offer-architect`; if a rung's price is unknown, mark [PRICE TBD] and request it — never invent. Beside any emitted price, carry the venture caveat "prices evolving — confirm live before customer-facing use."
 
 ## Tracking / CTA events
 
-One primary CTA per page. Each step fires one analytics event so the funnel is measurable end to end — an unmeasured step can't be optimized. Standard chain (event names per the venture's stack — GA4 for EE):
+One primary CTA per page. Each step fires one analytics event so the funnel is measurable end to end — an unmeasured step can't be optimized. The event chain follows the archetype's flow (event names per the venture's stack — GA4 for EE):
 
-`page_view → generate_lead → begin_checkout → add_bump → purchase → subscribe → book_call / application_submit`
+- **Goods/DTC:** `page_view → generate_lead → begin_checkout → add_bump → purchase → subscribe → book_call`
+- **Services:** `page_view → application_submit → call_booked → contract_sent`
+- **Marketplace:** `supply_signup / demand_signup → match_made → first_transaction`
+- **Subscription:** `page_view → sign_up → trial_start → subscribe → expand`
 
 ## Worked example (abridged) — Executive Edge
 

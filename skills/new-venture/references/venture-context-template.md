@@ -7,6 +7,7 @@ Copy to `ventures/<slug>/venture-context.md` and fill. Keep it to one screen whe
 name: <Venture> — Venture Context
 slug: <kebab-case>
 industry: <category>
+archetype: <subscription | goods | services | marketplace | blend>
 ownership: <sole / co-owned (with whom) / other>
 stage: <idea | building | launched | operating>
 regulatory-surface: <none | licensed | LegitScript-style | other>
@@ -29,7 +30,8 @@ loads-after: founder-profile/PROFILE.md
 - Who exactly, their pain, where they are, willingness + ability to pay
 
 ## Business model & revenue architecture
-- Revenue type(s): one-time / recurring / high-ticket / licensing / equity / hybrid
+- Archetype: <subscription | goods | services | marketplace | blend> — the money model every downstream skill reads (never defaulted to SaaS/subscription)
+- Revenue type(s): one-time / recurring (subscription) / goods (inventory) / services / marketplace (take-rate) / high-ticket / licensing / equity / hybrid
 - Known unit economics; any product gaps that limit what can be sold today
 
 ## Offers — the value ladder + the wedge to lead with

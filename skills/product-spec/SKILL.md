@@ -40,7 +40,7 @@ A spec with these concrete sections: **Build shape (custom / off-the-shelf) · P
 - Every acceptance criterion is verifiable; every criterion maps to a test (custom) or a manual-QA step (off-the-shelf). No untestable "shoulds."
 - Inherit the target repo's conventions (auth, RLS, migration naming) from its `CLAUDE.md`; default to the venture's stack, don't assume one. For off-the-shelf, inherit the platform's own conventions.
 - Security by default, matched to the surface: **custom** → state ownership/RLS for user-owned data, `verify_jwt` per function, validate all external input; **off-the-shelf** → vendor-config (least-privilege admin, MFA, a DPA where PII flows through the vendor). Secrets in env only in both.
-- No medical/legal claims in user-facing copy without a review flag. Drafts only — the spec is built after review.
+- No regulated claims (health / financial / legal / environmental) in user-facing copy without a review flag. Drafts only — the spec is built after review.
 
 ## Examples & evals
 - `references/method.md` — the section-by-section template, the off-the-shelf configuration-spec variant, a Given/When/Then + data-model example, the AC→test mapping + worked examples (custom + off-the-shelf).

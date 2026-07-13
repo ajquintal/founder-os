@@ -27,6 +27,7 @@ loads-after: founder-profile/PROFILE.md
 - (If licensing the operating model later) B2B: hotel groups / developers wanting a turnkey F&B operator.
 
 ## Business model & revenue architecture
+- Archetype: services + goods blend (experience/service delivery — covers, events, F&B contracts — plus food & beverage goods sold per cover); NOT subscription.
 - Revenue: covers × average check × turns (dining); events/private hire; hotel F&B contracts; potential management/licensing fees.
 - Unit economics driven by food/labor cost %, rent, and seat productivity — NOT subscriptions. (Tests whether offer/economics skills handle non-recurring models.)
 

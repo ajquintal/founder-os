@@ -32,6 +32,7 @@ loads-after: founder-profile/PROFILE.md
 
 ## Business model & revenue architecture
 
+- **Archetype:** subscription/SaaS + services blend — a recurring platform subscription plus high-ticket 1:1 / cohort / operator-license services; the money model runs both (LTV / CAC-payback / NRR on the recurring line, margin-per-engagement on the services line).
 - **B2C value ladder** *(pricing evolving — confirm live before use; April docs are stale)*: freemium labs-upload → **$199 unlock** entry → **~$99/mo** subscription (held through the sprint) → **$4,997** flagship 1:1 (consolidating to a single flagship) → **$1,750/mo** private client (capped).
 - **B2B (the current $-focus):** **Corporate cohorts $30–48k / 6 mo** (floor $30k); **Operator licenses $25k setup + $2k/mo**, or **$10k + 15% rev-share**; **channel referral 15%** of first-year value.
 - **Product gap to respect:** cohorts are delivered as N individual clients + a manual quarterly team report (a cohort data layer exists in prod, but never promise a live team dashboard until a contract is signed).

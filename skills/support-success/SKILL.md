@@ -18,7 +18,7 @@ description: >-
 Purpose: stand up the whole post-sale machine — support (deflect → resolve → escalate) and success (activate → retain → expand) — as one instrumented system that feeds product and metrics, and never sends or claims on its own.
 
 ## Load first
-1. `founder-profile/PROFILE.md` — voice, guardrails (DRAFTS ONLY, no medical/legal claims, escalate to a human, LYV firewall, customer data stays in-system, secrets never in text).
+1. `founder-profile/PROFILE.md` — voice, guardrails (DRAFTS ONLY, no regulated claims — health / financial / legal / environmental, escalate to a human, LYV firewall, customer data stays in-system, secrets never in text).
 2. `ventures/<slug>/venture-context.md` — model, revenue lines, ICP, offer ladder, stage, actual stack, regulatory surface, and the **core value action**.
 
 Reuse the venture's north-star + activation definition from `metrics-dashboard`; route feedback to `product-spec`. **Read the support shape from the venture's archetype** (subscription/SaaS, goods/e-commerce, marketplace, or services — subscription/SaaS is one case, not the default). Never hard-code an industry or a channel the venture doesn't use.

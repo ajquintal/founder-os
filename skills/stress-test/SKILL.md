@@ -31,7 +31,7 @@ too-many-fronts patterns — it makes narrowing and killing fast and unemotional
 4. **Red-team:** argue the strongest case to KILL (demand, economics, focus, timing, competition).
 5. **Failure-mode filter** — auto-flag any that fire: new front · architecture-before-revenue · standards-as-bottleneck · future-state bias · founder-dependence.
 6. **Economics gate:** do the unit economics plausibly close **(in the venture's money model — goods/services/marketplace/subscription, not a default AOV/LTV frame)**? If unknown → that's a make-or-break assumption, not a pass.
-7. **Guardrail check:** any conflict (LYV firewall, reputation, legal, drafts-only, medical/legal claims)? A breach is an automatic KILL/escalate.
+7. **Guardrail check:** any conflict (LYV firewall, reputation, legal, drafts-only, regulated claims — health / financial / legal / environmental)? A breach is an automatic KILL/escalate.
 8. **Verdict** using the output contract below.
 
 ## Output contract — return exactly this block

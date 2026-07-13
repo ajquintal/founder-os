@@ -8,7 +8,7 @@ The hour-by-hour play that chains the Founder OS into one pipeline: a raw idea i
 
 **It delivers:**
 - A **validated concept** — stress-tested, sized, and passed through the `/go-no-go` commit gate (or honestly killed).
-- A **launched, world-class-engineered, payment-ready product** — built from the `starters/saas` template, sliced from a real spec, tested, CI-green, deployed to a live URL, with Stripe wired and smoke-tested in test mode.
+- A **launched, payment-ready product** — realized by the cheapest path that ships (`/venture-bootstrap`'s buy-vs-build-vs-none decision): the default is off-the-shelf/no-code (a configured storefront / booking / POS, payment-wired and smoke-tested); on the custom-software branch it's a world-class-engineered app cloned from `starters/saas`, sliced from a real spec, tested, CI-green, deployed to a live URL, with Stripe wired and smoke-tested in test mode.
 - A **live funnel** — positioning, conversion copy, and a landing page pointing at the product.
 - **Initial content + outreach, drafted** — ready to send the moment you approve.
 
@@ -22,7 +22,7 @@ The hour-by-hour play that chains the Founder OS into one pipeline: a raw idea i
 
 ## The timeline
 
-Build is the long pole (42 of the 72 hours) — everything before it is cheap-to-kill validation, everything after is fast because the product already exists and is verified.
+On the custom-software branch, build is the long pole (up to ~42 of the 72 hours); the off-the-shelf/no-code path is far shorter — you configure, you don't code. Either way, everything before build is cheap-to-kill validation, and everything after is fast because the product already exists and is verified.
 
 ### Hours 0–6 · CONCEPT — decide what to build
 - **Skills, in order:** `/new-venture` → `/stress-test` → `/market-scan` → `/offer-architect` → `/opportunity-size` → `/naming-brand` → `/go-no-go`.
@@ -30,9 +30,10 @@ Build is the long pole (42 of the 72 hours) — everything before it is cheap-to
 - **Gate to BUILD → `/go-no-go`:** GO commits the build. CONDITIONAL GO funds the *test*, not the full build — build only if the named conditions hold. **NO-GO stops here — and that's a win: you spent 6 hours, not 66.** (Human-approval gate: this commits money + founder-time.)
 
 ### Hours 6–48 · BUILD — make the product
-- **Skills, in order:** `/venture-bootstrap` (from `starters/saas`) → `/product-spec` → `/ship`.
-- **Produced:** the technical foundation cloned from the starter (stack, repo, `CLAUDE.md`, CI); an implementation-ready spec (stories, testable acceptance criteria, data model + RLS, test plan); then `/ship` decomposes the spec into vertical slices, builds them (parallel build agents, each with tests), runs the dev subagents (`tester` to green, `code-reviewer` read-only for security/correctness, `debugger` on failures), gets CI green, deploys to a live URL, and wires Stripe test-mode checkout.
-- **Gate to LAUNCH → `/ship` reports done:** live URL up, CI green, test-mode checkout smoke-tested. Done = **live + verified in prod**, not "written." (Human-approval gates inside this block: **deploy** to a live URL; **payments go-live** is a separate gate, usually left pending here. Never launch broken — but never gold-plate past the smallest shippable slice either.)
+- **Skills, in order:** `/venture-bootstrap` (runs the **buy-vs-build-vs-none decision first**) → `/product-spec` → `/ship`.
+- **Default (off-the-shelf / no-code) — the short path:** most ventures don't need a codebase. `/venture-bootstrap` selects and configures the off-the-shelf spine (storefront / booking / POS), `/product-spec` writes the configuration + manual-QA acceptance, and the product goes live payment-wired and smoke-tested — no `/ship`.
+- **Custom-software branch (only when the venture genuinely needs it) — the long pole:** clone `starters/saas` for the technical foundation (stack, repo, `CLAUDE.md`, CI, security/RBAC backbone); `/product-spec` produces an implementation-ready spec (stories, testable acceptance criteria, data model + RLS, test plan); then `/ship` decomposes the spec into vertical slices, builds them (parallel build agents, each with tests), runs the dev subagents (`tester` to green, `code-reviewer` read-only for security/correctness, `debugger` on failures), gets CI green, deploys to a live URL, and wires Stripe test-mode checkout. This is the ~42-hour block.
+- **Gate to LAUNCH → build reports done:** the product is live and payment-wired — off-the-shelf: configured, published, one real test-mode transaction passed; custom (`/ship`): live URL up, CI green, test-mode checkout smoke-tested. Done = **live + verified in prod**, not "written." (Human-approval gates inside this block: **deploy** to a live URL / publish the storefront; **payments go-live** is a separate gate, usually left pending here. Never launch broken — but never gold-plate past the smallest shippable slice either.)
 
 ### Hours 48–66 · LAUNCH — take it to market
 - **Skills, in order:** `/positioning` → `/direct-response-copy` → `/landing-funnel` → `/content-engine` → `/launch-plan`.

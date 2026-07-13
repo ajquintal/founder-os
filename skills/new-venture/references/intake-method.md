@@ -13,7 +13,7 @@ One level deep. Goal: a complete venture context in minutes, with the fewest que
 1. Name / working codename.
 2. One-line thesis (what it does → the outcome).
 3. Who exactly pays, and for what pain.
-4. Revenue model + any known price points.
+4. Revenue model — the venture's archetype (subscription/goods/services/marketplace/blend) + any known price points.
 5. Ownership (sole / co-owned — triggers firewall rules) + regulatory surface.
 6. Stage + the goal/deadline + what would make you kill it.
 7. Assets already in hand (domain, entity, audience, partners, capital).
@@ -28,4 +28,4 @@ One level deep. Goal: a complete venture context in minutes, with the fewest que
 
 ## Guardrails carried into every new venture
 
-Drafts-only outbound · LYV firewall (if any co-ownership/relationship overlap) · no medical/legal claims without review · no spend without approval. These are defaults, not options.
+Drafts-only outbound · LYV firewall (if any co-ownership/relationship overlap) · no regulated claims (health / financial / legal / environmental) without review · no spend without approval. These are defaults, not options.

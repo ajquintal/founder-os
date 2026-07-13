@@ -13,7 +13,7 @@ Raw notes blur three different things: what was *decided*, what someone *will do
 3. **Action items.** A concrete next action with an *owner* and a *due date*. If the source doesn't state an owner or date, mark it `—` (unassigned / no-date) — never infer one. A missing owner on an important action becomes an open question.
 4. **Open questions.** Everything unresolved: debated-but-not-decided, blockers, parked items. Phrase each as a question and name who can answer it.
 5. **Summary.** One paragraph in Tony's register — direct, active, no agenda recap. Lead with what moved and what happens next, not "the team met to discuss."
-6. **Guardrail pass.** Strip fabricated commitments; flag (don't send) any external follow-up; no medical/legal claims. Follow-up messages are drafts.
+6. **Guardrail pass.** Strip fabricated commitments; flag (don't send) any external follow-up; no regulated claims (health / financial / legal / environmental). Follow-up messages are drafts.
 
 ## Worked example (abridged) — B2B sprint sync (Executive Edge)
 
