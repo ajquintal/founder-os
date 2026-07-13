@@ -52,37 +52,37 @@ Write the full venture brief to ${runDir}/00-venture-idea.md. Return a tight 150
 
 phase('Construct')
 const concept = await agent(
-  `You are exercising the Founder OS CONCEPT skills on a venture, to test whether the skills produce a complete, correct concept package for a NON-software physical-goods business. ${LOAD}
+  `You are exercising the Founder OS CONCEPT skills on a venture, to test whether the skills produce a complete, correct concept package for THIS venture, whatever its archetype (this run's archetype: ${archetype}). ${LOAD}
 Read and faithfully FOLLOW these skill files (each has SKILL.md + references/method.md): ${REPO}/skills/stress-test, ${REPO}/skills/market-scan, ${REPO}/skills/offer-architect, ${REPO}/skills/opportunity-size, ${REPO}/skills/go-no-go. Run them in sequence on the venture below. Use web knowledge for realistic market/economics reasoning but do not fabricate precise citations.
 VENTURE: ${venture}
 Write the combined concept package (stress-test verdict, market scan, offer + economics, sizing, go/no-go) to ${runDir}/01-concept.md.
-Return: a 200-word summary of the concept package PLUS a bulleted list of "FRICTION" \u2014 every place a skill's instructions were unclear, assumed software/SaaS/subscriptions, assumed a digital product, or otherwise did not fit a physical-goods business. Be specific with skill name + what broke.`,
+Return: a 200-word summary of the concept package PLUS a bulleted list of "FRICTION" \u2014 every place a skill's instructions were unclear, assumed software/SaaS/subscriptions, assumed a digital product, or otherwise did not fit this venture's archetype (${archetype}). Be specific with skill name + what broke.`,
   { label: 'construct-concept', phase: 'Construct' }
 )
 
 const [gtm, buildEng, ops] = await parallel([
   () => agent(
-    `Exercise the Founder OS GO-TO-MARKET + BRAND + CONTENT skills on the venture, testing fit for a physical-goods DTC+wholesale brand. ${LOAD}
+    `Exercise the Founder OS GO-TO-MARKET + BRAND + CONTENT skills on the venture, testing fit for THIS venture (archetype: ${archetype}). ${LOAD}
 Read and FOLLOW: ${REPO}/skills/positioning, ${REPO}/skills/brand-design, ${REPO}/skills/gtm-marketing, ${REPO}/skills/content-engine, ${REPO}/skills/social-media (SKILL.md + references/method.md each). Also read ${runDir}/01-concept.md for the offer/positioning inputs.
 VENTURE: ${venture}
 Write the GTM package (positioning, brand direction + design tokens, GTM plan, content system, social plan) to ${runDir}/02-gtm.md.
-Return a 150-word summary PLUS a "FRICTION" bullet list: every instruction that leaked SaaS/subscription/B2B assumptions, or didn't fit physical retail/wholesale/DTC. Skill name + specific issue.`,
+Return a 150-word summary PLUS a "FRICTION" bullet list: every instruction that leaked SaaS/subscription/B2B assumptions, or didn't fit this venture's archetype (${archetype}). Skill name + specific issue.`,
     { label: 'construct-gtm', phase: 'Construct' }
   ),
   () => agent(
-    `Exercise the Founder OS PRODUCT/BUILD + ENGINEERING skills on the venture. The point is to see how the software-oriented build layer handles a business whose "product" is physical goods with only a light software footprint (a storefront). ${LOAD}
+    `Exercise the Founder OS PRODUCT/BUILD + ENGINEERING skills on the venture. The point is to see how the build layer handles THIS venture's product/delivery shape (physical, service, marketplace, or software) per its archetype (${archetype}) — starting from buy-vs-build-vs-none, never assuming a custom app. ${LOAD}
 Read and FOLLOW: ${REPO}/skills/product-spec, ${REPO}/skills/venture-bootstrap (SKILL.md + references/method.md), and the docs ${REPO}/docs/engineering-backbone.md + ${REPO}/docs/tool-mcp-stack.md. Also read ${runDir}/01-concept.md.
 VENTURE: ${venture}
 Write the build/engineering package (what software is actually needed vs bought off-the-shelf like Shopify; a product-spec for whatever custom surface exists; the engineering/security posture that applies; the tool/MCP stack) to ${runDir}/03-build-eng.md.
-Return a 150-word summary PLUS a "FRICTION" bullet list: every place the build layer ASSUMED a custom SaaS app, RLS/Supabase, subscriptions, or otherwise didn't gracefully handle "mostly off-the-shelf + physical ops". Skill/doc name + specific issue.`,
+Return a 150-word summary PLUS a "FRICTION" bullet list: every place the build layer ASSUMED a custom SaaS app, RLS/Supabase, subscriptions, or otherwise didn't gracefully handle this venture's real build shape (buy-vs-build-vs-none per ${archetype}). Skill/doc name + specific issue.`,
     { label: 'construct-build', phase: 'Construct' }
   ),
   () => agent(
-    `Exercise the Founder OS OPERATIONS skills on the venture: finance, sales/CRM, legal, org/roles, analytics, support. Test fit for a physical-goods DTC+wholesale brand. ${LOAD}
+    `Exercise the Founder OS OPERATIONS skills on the venture: finance, sales/CRM, legal, org/roles, analytics, support. Test fit for THIS venture (archetype: ${archetype}). ${LOAD}
 Read and FOLLOW: ${REPO}/skills/finance-ops, ${REPO}/skills/sales-crm, ${REPO}/skills/legal-pack, ${REPO}/skills/org-roles, ${REPO}/skills/analytics-stack, ${REPO}/skills/support-success (SKILL.md + references/method.md each). Also read ${runDir}/01-concept.md.
 VENTURE: ${venture}
-Write the operations package (finance model on goods economics + COGS/inventory; CRM/pipeline for wholesale accounts; the legal/contract set incl. lease + supply + sale-of-goods; org/roles; analytics; support) to ${runDir}/04-ops.md.
-Return a 150-word summary PLUS a "FRICTION" bullet list: every instruction that assumed SaaS/subscription revenue, deferred SaaS revenue, a digital-only funnel, or didn't fit inventory/wholesale/retail/food-safety. Skill name + specific issue.`,
+Write the operations package (finance model on THIS archetype's economics; CRM/pipeline fit to the venture's sales motion; the legal/contract set the model actually needs; org/roles; analytics; support) to ${runDir}/04-ops.md.
+Return a 150-word summary PLUS a "FRICTION" bullet list: every instruction that assumed a default revenue model (e.g. SaaS/subscription, deferred SaaS revenue, a digital-only funnel) or otherwise didn't fit this venture's archetype (${archetype}). Skill name + specific issue.`,
     { label: 'construct-ops', phase: 'Construct' }
   ),
 ])
@@ -108,7 +108,7 @@ LENS = COMPLETENESS. Cross-check the constructed business against all 15 domains
   ),
   () => agent(
     `${auditContext}
-LENS = INDUSTRY-AGNOSTICISM (the most important lens for this run \u2014 a physical-goods business). Hunt for ANY assumption that leaked from SaaS / subscriptions / health / Executive Edge into either the outputs OR the skill instructions themselves. Examples: assuming recurring/subscription revenue, deferred SaaS revenue recognition, RLS/Supabase/edge-functions as the only build path, a digital-only funnel, "MRR/churn" as the default KPI, ToS as the primary customer contract instead of sale-of-goods. For each leak, cite the skill file where the assumption is baked in and propose an agnostic fix.`,
+LENS = INDUSTRY-AGNOSTICISM (the most important lens \u2014 this run's archetype is: ${archetype}). Hunt for ANY assumption that leaked from SaaS / subscriptions / health / Executive Edge into either the outputs OR the skill instructions themselves. Examples: assuming recurring/subscription revenue, deferred SaaS revenue recognition, RLS/Supabase/edge-functions as the only build path, a digital-only funnel, "MRR/churn" as the default KPI, ToS as the primary customer contract instead of sale-of-goods. For each leak, cite the skill file where the assumption is baked in and propose an agnostic fix.`,
     { label: 'audit-agnosticism', phase: 'Audit', schema: FINDINGS_SCHEMA }
   ),
   () => agent(
@@ -140,7 +140,7 @@ Do the following, in order:
 3. APPLY THE SAFE FIXES: for every surviving finding with fix_class = "safe-mechanical" (typos, wording, count/label drift, stale references, consistency), APPLY the edit directly to the repo file using your Edit tool. Only safe-mechanical, and only edits under ${REPO}/skills, ${REPO}/docs, ${REPO}/commands, ${REPO}/README.md, ${REPO}/skills/README.md, ${REPO}/FOUNDER_OS_MASTER_ARCHITECTURE.md. Never delete files, never large rewrites. Keep a log of each file+change you applied.
 4. Do NOT apply substantive findings \u2014 write them up as proposals with the exact suggested change so Tony can approve.
 5. WRITE ${runDir}/findings.md : a clean report \u2014 headline, counts (by severity, #auto-fixed, #proposed, #dropped), then two sections "AUTO-FIXED (safe)" and "PROPOSED (needs Tony's approval)", each finding with domain/file/defect/evidence/fix.
-6. APPEND one row to ${REPO}/evals/HARDENING_LEDGER.md (create it with a header if missing): date/runId, archetype ("physical-goods F&B DTC+wholesale"), venture name, #findings by severity, #auto-fixed, #proposed, and the single most important systemic issue. Keep the row concise.
+6. APPEND one row to ${REPO}/evals/HARDENING_LEDGER.md (create it with a header if missing): date/runId, the ACTUAL archetype of THIS run (concisely summarize: ${archetype}), venture name, #findings by severity, #auto-fixed, #proposed, and the single most important systemic issue. Keep the row concise.
 Return: the headline counts, the top 5 most important findings (with file), a list of exactly which files you auto-edited, and the one systemic weakness this run exposed in the OS.`,
   { label: 'synthesize', phase: 'Synthesize' }
 )
