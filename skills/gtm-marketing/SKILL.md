@@ -17,7 +17,7 @@ description: >-
 
 # /gtm-marketing — Go-To-Market Orchestrator
 
-The whole go-to-market as one plan. This is domain 6 (Marketing/GTM) — the founder's stated blind spot, carried by the system as opinionated defaults he approves rather than authors. It **composes** the Launch skills into a single motion-plus-channel plan and **adds** the seven things they don't cover: motion, cross-channel budget/CAC economics, lifecycle, partnerships, PR, the calendar, and attribution/KPIs. It synthesizes; it does not re-derive what a composed skill owns.
+The whole go-to-market as one plan. This is domain 6 (Marketing/GTM) — the founder's stated blind spot, carried by the system as opinionated defaults he approves rather than authors. It **composes** the Launch skills into a single motion-plus-channel plan and **adds** the nine things they don't cover: motion, message-market-fit routing, the channel portfolio, cross-channel budget/CAC economics, lifecycle, partnerships, PR, the calendar, and attribution/KPIs. It synthesizes; it does not re-derive what a composed skill owns.
 
 ## What this owns vs. delegates (compose, don't duplicate)
 | This skill OWNS (adds) | Delegated to (pull / run, never re-author) |
