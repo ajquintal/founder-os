@@ -38,7 +38,7 @@ decision is already made upstream and carried here; Fable executes, it does not 
 4. **The engineering + security standard:** `docs/engineering-backbone.md` (the `[STARTER]`/`[CONFIG]`/`[VENTURE]` control tags + the minimum-bar go-live gate + the compliance-regime matrix §9) and `starters/saas/CLAUDE.md` + `README.md` (what the starter already enforces).
 5. **The tool map:** `docs/tool-mcp-stack.md` (function → tool → MCP → availability; the minimum viable stack; connect-these triggers).
 6. **The design hand-off:** `/brand-design` (the paste-ready `:root`/`.dark` HSL tokens + component spec that drop into the starter).
-7. **The operational-setup outputs, each consumed if present:** `finance-ops`, `sales-crm`, `gtm-marketing`, **the content & social layer (`content-engine`, `content-cadence`, `social-media`)**, `support-success`, `analytics-stack`, `legal-pack`, `org-roles`. Any that does not exist yet is either marked **N/A for this venture (why)** or **prerequisite — run it first**; never fabricated, never silently dropped.
+7. **The operational-setup outputs, each consumed if present:** `finance-ops`, `sales-crm`, `gtm-marketing`, **the content & social layer (`content-engine`, `content-cadence`, `social-media`)**, `support-success`, `analytics-stack` (+ `metrics-dashboard`, its KPI tree — consumed under WS-C), `legal-pack`, `org-roles`. Any that does not exist yet is either marked **N/A for this venture (why)** or **prerequisite — run it first**; never fabricated, never silently dropped.
 
 Derive everything from these. Never hard-code an industry — read it from the venture context.
 
@@ -91,6 +91,7 @@ One document, self-contained, in this order:
 | `content-engine` / `content-cadence` / `social-media` | WS-F content system + per-platform social surfaces, calendar, templates | mark prerequisite — run the content/social skills |
 | `support-success` | WS-G helpdesk/KB config-PRs | mark prerequisite — run `support-success` |
 | `analytics-stack` | WS-C instrumentation config-PRs | mark prerequisite — run `analytics-stack` |
+| `metrics-dashboard` | WS-C KPI tree / north-star + metric definitions | mark prerequisite — run `metrics-dashboard` (or consumed via `analytics-stack`) |
 | `legal-pack` | WS-H ToS/privacy/DPA + regime controls | mark prerequisite — run `legal-pack` |
 | `org-roles` | WS-I access register + in-app roles | mark prerequisite — run `org-roles` |
 
