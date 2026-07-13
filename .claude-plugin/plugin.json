@@ -1,0 +1,10 @@
+{
+  "name": "founder-os",
+  "version": "1.0.0",
+  "description": "Tony Quintal's AI-native founder operating system — industry-agnostic skills to concept, build, launch, and operate any venture. Loads the Founder Profile + active venture context, then executes.",
+  "author": {
+    "name": "Tony Quintal",
+    "email": "tony@tonyquintal.com"
+  },
+  "keywords": ["founder", "operating-system", "concept", "offer", "market", "venture"]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "founder-os",
+  "version": "1.0.0",
+  "description": "Private marketplace for Tony's Founder OS — install across Claude Code (and Cowork once registered).",
+  "owner": {
+    "name": "Tony Quintal",
+    "email": "tony@tonyquintal.com"
+  },
+  "plugins": [
+    {
+      "name": "founder-os",
+      "source": ".",
+      "description": "Founder Profile + Concept/Build/Launch/Operate skills + dev subagents. Reads the active venture context and executes to finished."
+    }
+  ]
+}

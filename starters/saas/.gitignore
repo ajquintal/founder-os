@@ -1,0 +1,30 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+
+# Environment — NEVER commit real secrets. .env.example is the only tracked env file.
+.env
+.env.*
+!.env.example
+*.local
+
+# Test / tooling artifacts
+coverage
+playwright-report
+test-results
+.vite
+.eslintcache
+
+# Supabase local
+supabase/.branches
+supabase/.temp
+
+# Editors / OS
+.DS_Store
+.idea
+.vscode/*
+!.vscode/extensions.json
+*.log

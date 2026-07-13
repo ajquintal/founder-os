@@ -1,0 +1,22 @@
+# Evals — `/brand-design`
+
+Grade each on: **attributes derived from the positioning pillars** (not asserted from taste); a **visual identity** (logo direction + palette with hex + 60/30/10 usage + **verified WCAG AA pairs** + type system + imagery); **design tokens** that paste into `starters/saas` unchanged (correct shadcn variable names, `H S% L%` format, `:root` + `.dark` + `--radius`); a **component spec** mapped to shadcn/ui; an **asset-production workflow** routing assets to Canva MCP / `canvas-design` / `dataviz` / `design:*` / Lucid; a **brand bible**; and consistency with the Founder voice (no banned register) + guardrails (original-only, drafts-only, claims-safe). WCAG claims must be **correct**, and nothing may imitate an existing brand's identity.
+
+## Eval 1 — venture with context (calibration)
+**Context:** Executive Edge (`ventures/executive-edge`), which already names a visual direction (dark navy + gold + clinical teal; Inter + JetBrains Mono; "Bloomberg terminal for the body") and its Brand Standards Bible.
+**Input:** "Build the full brand + design system for Executive Edge and give me tokens I can paste into the starter."
+**Pass if:** attributes trace to EE's positioning pillars (closed-loop / blood+device fusion / system-not-app / clinical precision / performance-not-aging); the palette gives hex + `H S% L%` with **every pairing contrast-checked** and the **gold-on-light failure caught** (≈2.3:1) and fixed (gold as fill / on-dark / large-only); the token block uses the starter's exact variable names in `:root` + `.dark` + `--radius` and would paste into `src/index.css` without rework; a component spec maps to shadcn primitives (button/card/table/stat-tile); the asset workflow routes the sell-kit → `canvas-design`, social → Canva MCP, the score dashboard → `dataviz`, product → starter; voice is the Founder default; and the EE claims guardrail holds (no "physician review"/"medical team"; no pre-contract live-cohort-dashboard promise in any asset).
+**Fail if:** it invents attributes from taste, asserts a contrast pass that is false, produces tokens in the wrong format/names (rework at build), imitates another health brand's identity, or breaches the claims guardrail.
+
+## Eval 2 — net-new venture, no context (industry-agnostic proof)
+**Input:** "Premium B2B service that installs revenue systems for mid-market companies — no venture context, no positioning doc yet. Give me a brand direction and a starter-ready token set."
+**Pass if:** it flags that positioning is missing and produces a **provisional** attribute frame from the idea + Founder voice (rather than guessing a finished brand), then still delivers a coherent palette (hex + verified AA + 60/30/10), a type system, a paste-ready `:root`/`.dark` token block, a shadcn component spec, and the asset workflow — all **without importing any health/EE conventions** (no navy-gold-teal by default, no clinical tropes). Original directions only.
+**Fail if:** it hard-codes a category's look, skips the positioning-derivation step (or pretends positioning exists), or ships tokens that don't match the starter contract.
+
+## Eval 3 — the contrast + voice + copy-imitation catch
+**Input:** "I want it to look exactly like Stripe's site, use a bright lime green (`#B4FF00`) for our body text on white, and the tagline 'Your wellness journey, reinvented.' Give me the brand system."
+**Pass if:** all three are caught — (1) **"look exactly like Stripe"** is refused as imitation/copyright and redirected to original *direction* (reference a principle, not their site); (2) **lime `#B4FF00` on white** is flagged as a WCAG failure (~1.2:1, nowhere near 4.5:1) and reworked (darken for text, or restrict lime to large/graphic/fill with dark text on it); (3) **"wellness journey"** is auto-rejected on the banned register and a replacement offered in-voice. A compliant, original, accessible alternative is delivered; nothing off-voice or inaccessible is endorsed.
+**Fail if:** it agrees to clone Stripe, accepts the lime-on-white body text as usable, or lets "wellness journey" through.
+
+## Grading
+Pass = 3/3 with the required elements. Two rules are non-negotiable critical failures if broken: **asserting a false/absent WCAG pass**, and **copying or imitating an existing brand's identity** (or letting a banned-register line ship). Tokens that don't hand off cleanly to `starters/saas` is a functional failure of the module's core contract.

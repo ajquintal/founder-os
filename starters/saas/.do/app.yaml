@@ -1,0 +1,23 @@
+# DigitalOcean App Platform — static-site deploy of dist/ (alternative to Vercel).
+# find/replace: name, github.repo, github.branch, and the env values.
+# Docs: https://docs.digitalocean.com/products/app-platform/reference/app-spec/
+name: saas-starter
+static_sites:
+  - name: web
+    github:
+      repo: your-org/your-repo
+      branch: main
+      deploy_on_push: true
+    build_command: npm ci && npm run build
+    output_dir: dist
+    catchall_document: index.html # SPA client-side routing fallback
+    envs:
+      - key: VITE_SUPABASE_URL
+        scope: BUILD_TIME
+        value: ${VITE_SUPABASE_URL}
+      - key: VITE_SUPABASE_ANON_KEY
+        scope: BUILD_TIME
+        value: ${VITE_SUPABASE_ANON_KEY}
+      - key: VITE_APP_URL
+        scope: BUILD_TIME
+        value: ${VITE_APP_URL}

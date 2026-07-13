@@ -1,0 +1,16 @@
+# Supabase project config. find/replace: your-project-ref
+project_id = "your-project-ref"
+
+# -----------------------------------------------------------------------------
+# Edge function auth. DEFAULT is verify_jwt = true (a valid Supabase user JWT is
+# required). Only self-authenticating functions may set verify_jwt = false:
+# webhooks, auth hooks, public OAuth callbacks, and cron jobs — each must verify
+# the caller by another means (signature, shared secret, etc.).
+# -----------------------------------------------------------------------------
+
+[functions.create-checkout]
+verify_jwt = true # requires an authenticated Supabase user
+
+[functions.stripe-webhook]
+verify_jwt = false # EXCEPTION: Stripe sends no Supabase JWT.
+# It self-authenticates by verifying the Stripe webhook signature (STRIPE_WEBHOOK_SECRET).
