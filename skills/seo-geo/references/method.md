@@ -72,7 +72,7 @@ LLMs quote sources that are unambiguous, structured, and corroborated. Build in:
 | "The drift problem, and closed-loop correction" | Cluster | "why do health protocols stop working over time?" | direct-answer block + a sourced stat + Article schema | up to pillar + $199 offer | Cowork |
 | "Execution platforms vs testing-only services" | Cluster (comparison) | "best health optimization platform for high performers?" | factual comparison table (strong AI-citation magnet) + direct answer, no disparagement | up to pillar + $199 offer | Cowork |
 
-**Claims guard:** any cluster touching hormones/testosterone/TRT routes to review before publish; frame around metrics/optimization, never disease/treatment; never "physician review"/"medical team."
+**Claims guard:** any cluster touching a regulated topic (for a health venture, hormones/testosterone/TRT) routes to review before publish; frame around the venture's substantiated value, never a regulated or unsubstantiated claim (per the venture's claims guardrails).
 
 ## Anti-patterns (flag these)
 

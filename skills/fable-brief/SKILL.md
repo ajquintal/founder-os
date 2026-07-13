@@ -73,7 +73,7 @@ One document, self-contained, in this order:
 - **Gates are consolidated and never autonomous.** Deploy, payments go-live, production migrations, spend, and compliance sign-off are drafted with a rollback path and human-approved — collected into the one gate list so the founder's attention hits exactly the irreversible points.
 - **Secrets are names only.** Never a key, token, or value in the brief — only the env-var name and where it is set. (Guardrail.)
 - **Inherit, don't invent.** Stack, auth model, RLS, migration naming, CI, definition-of-done come from `starters/saas`/its `CLAUDE.md` and `docs/engineering-backbone.md`. Read the industry from the venture context; hard-code nothing.
-- **Drafts only; $0 until proven.** The brief is a plan to execute against human gates — nothing it describes deploys, sends, publishes, or spends without Tony's approval. Honor venture claims guardrails (e.g. EE: no medical claims, never "physician review"/"medical team", never promise a live cohort/team dashboard pre-contract).
+- **Drafts only; $0 until proven.** The brief is a plan to execute against human gates — nothing it describes deploys, sends, publishes, or spends without Tony's approval. Honor the venture's claims & regulatory constraints (from its `venture-context` + `engineering-backbone §9`); make only substantiated claims; route any regulated claim (health / financial / legal / environmental) for professional review; never promise a capability the venture can't deliver today.
 - Clinical, precise, premium voice; banned words out (journey, holistic, guru, revolutionary, game-changer, hack). Secrets never in text.
 
 ## Composition (what it consumes; degrade gracefully)

@@ -68,7 +68,7 @@ Discipline: the spend cap is a hard stop. A losing angle dies at the cap. No "gi
 
 **Single metric (lives/dies):** front-end CPA vs max CPA — hold CPA at/under the $85 target and never above the $169 break-even ceiling; if it can't hold under the ceiling, the plan dies.
 
-**Guardrails applied:** no spend until Tony approves; no medical claims, never "physician review"/"medical team"; drafts only; LYV audiences excluded.
+**Guardrails applied:** no spend until Tony approves; only substantiated claims, regulated claims routed to review (per the venture's claims guardrails); drafts only; LYV audiences excluded.
 
 ## Anti-patterns (flag these)
 

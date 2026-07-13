@@ -44,8 +44,7 @@ EVENTS: page_view → generate_lead → begin_checkout → add_bump → purchase
 - **Price:** pull prices from `/offer-architect`; if none exists, mark [PRICE TBD] and request it — never invent. Beside any emitted price, carry the venture caveat "prices evolving — confirm live before customer-facing use."
 - One page, one goal, one primary CTA. Every section advances the CTA or kills an objection — cut the rest.
 - Every step fires a tracking event; no unmeasured step. Match funnel shape to ticket size (high-ticket = application/call, not checkout).
-- **Claims (G-claims):** on public pages, any Rx / peptide / GLP or health claim must be compliance-reviewed (LegitScript-grade) — never state medical claims or "physician review" / "medical team".
-- **Roster/dashboard (G-dashboard):** never imply or promise a live team/cohort dashboard pre-contract — roster reporting is a quarterly report until a contract is signed.
+- **Claims & capability (G-claims):** make only substantiated claims, and never imply a capability or deliverable the venture can't provide today. Honor the venture's own claims & regulatory constraints (from its `venture-context` + `engineering-backbone §9`); route any regulated claim (health / financial / legal / environmental) for professional review before publish.
 - Spec only — the structure/spec is a draft; nothing goes live or published without approval.
 
 ## Examples & evals

@@ -38,8 +38,7 @@ Stand up the content system once: the 3–5 pillars, format mix, repurposing pip
 - Pillars come from `/positioning` — pull the messaging pillars, don't invent them; then sharpen and map each to an offer rung.
 - Every pillar maps to an offer rung. No content that doesn't compound toward revenue.
 - LYV firewall: never cross-source LYV audience or assets.
-- Respect venture claims guardrails (EE: no medical claims; never "physician review"/"medical team").
-- Never imply a live team/cohort dashboard pre-contract — B2B/operator pillars reference a quarterly report, not a live dashboard.
+- **Claims & capability:** make only substantiated claims, and never imply a capability or deliverable the venture can't provide today. Honor the venture's own claims & regulatory constraints (from its `venture-context` + `engineering-backbone §9`); route any regulated claim (health / financial / legal / environmental) for professional review before publish.
 
 ## Examples & evals
 - `references/method.md` — full method + a worked example (Executive Edge).

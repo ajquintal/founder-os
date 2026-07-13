@@ -48,7 +48,7 @@ Intake normalizes every channel into one ticket shape: `who · account/tier · c
 | Legal threat, liability, contract dispute, regulator | Founder + legal | admit fault, promise remedy, or make a legal claim |
 | Security/privacy incident, PII exposure | Founder + eng (incident) | expose data, speculate on cause publicly |
 | Churn threat / at-risk logo above $ threshold | Founder (relationship) | discount or commit terms |
-| Regulated claim invited (e.g. LegitScript surface) | Review before any reply | assert the claim |
+| Regulated claim invited (health / financial / legal / environmental) | Review before any reply | assert the claim |
 
 Deliverable: filled triage rubric + severity table with SLAs + the escalation matrix.
 
@@ -127,7 +127,7 @@ Model: B2C ladder (freemium → $199 → ~$99/mo → $4,997) + B2B (cohorts $30�
 | S3 | "How do I upload my labs?", change email, protocol step unclear | ≤1 business day | Support; KB-first |
 | S4 | "Add a Garmin integration", cosmetic | ≤2 business days | Feedback register |
 
-Hard-escalate lane (never answered by the model): **"Is it safe to take this peptide with my meds?" / "What does my TSH of X mean?" / "Should I stop my prescription?"** → refer to the **clinical partner**; the model states it can't advise clinically and routes. Legal/claims → founder. Guardrail: never say "physician review" / "medical team" (refer-out model); never promise a live cohort dashboard pre-contract.
+Hard-escalate lane (never answered by the model): **"Is it safe to take this peptide with my meds?" / "What does my TSH of X mean?" / "Should I stop my prescription?"** → refer to the **clinical partner**; the model states it can't advise clinically and routes. Legal/claims → founder. Guardrail: honor the venture's claims guardrails (only substantiated claims; regulated claims routed to review); never promise a capability the venture can't deliver today.
 
 **3. KB structure.** *Getting started · Protocols & scoring (Daily Edge / Drift / BRI) · Labs & data (upload, Junction panels) · Devices & sync (Oura, Withings) · Billing & account · Troubleshooting.* Each article on the template; clinical content is member-gated and claim-reviewed, distinct from public pages.
 

@@ -44,7 +44,16 @@ The closed-loop execution layer (protocol ↔ score ↔ drift ↔ adjust) + bloo
 
 - Voice = the Founder Profile universal default (clinical, precise, premium, confident, data-driven). No deltas needed.
 - Visual: dark navy + gold + clinical teal; Inter + JetBrains Mono; "Bloomberg terminal for the body." Full system in the EE Brand Standards Bible.
-- **Language guardrail:** never say "physician review" / "medical team" in sales or contract copy (refer-out model). No medical claims without review.
+- **Language guardrail:** see "Claims & regulatory constraints" below.
+
+## Claims & regulatory constraints
+
+Executive Edge's specific claims/compliance rules. The OS skills now carry only the generic principle ("make substantiated claims; route regulated claims to professional review"); these EE specifics are what "regulated" and "reviewed" mean for this venture, and every skill reads them from here (not from hard-coded skill text):
+
+- **No medical claims** in customer-facing copy without review — frame around performance/optimization and measured outcomes, never disease, diagnosis, or treatment.
+- **Never say "physician review" or "medical team"** in sales, marketing, or contract copy. EE runs a **refer-out model**: Rx / GLP / peptide lines run through licensed partners; EE does not employ the clinicians. Claim precision via the scoring IP (Daily Edge / Drift / BRI / PhenoAge), never via implied clinical staff.
+- **No live team/cohort dashboard promised pre-contract.** Cohorts are delivered as N individual clients + a manual quarterly team report; a cohort data layer exists in prod but is never promised as a live dashboard until a contract is signed.
+- **LegitScript-relevant on public pages:** any Rx / peptide / GLP or other health claim on public marketing pages must be compliance-reviewed (LegitScript-grade) before publish. Member-gated clinical content is treated differently from public claims.
 
 ## Stack
 

@@ -270,7 +270,7 @@ The part everyone skips: step 2. Insight is easy to sell; execution is the moat.
 
 **8. Growth loops + KPIs.** Loops 1–4 as above; the closer is owned-list adds + booked calls, not followers. KPI block handed to `/metrics-dashboard` with EE floors and the **Aug 3 kill gate** (EE's own criterion: any rail with 0 booked calls by Aug 3 is cut). Social north-star: booked B2B calls attributed to social. Followers/impressions/likes = diagnostics only.
 
-**Guardrails applied:** drafts only, one batch approval; clinical/premium voice, no banned words, no emoji-bait; **no medical claims**, never "physician review"/"medical team"; **no live team/cohort dashboard implied** (proof posts cite outcomes/a quarterly report); **LYV firewall** on all target and DM lists; links in the first comment on LinkedIn.
+**Guardrails applied:** drafts only, one batch approval; clinical/premium voice, no banned words, no emoji-bait; **only substantiated claims**, regulated claims routed to review, and **no capability implied the venture can't deliver** (per the venture's claims guardrails); **LYV firewall** on all target and DM lists; links in the first comment on LinkedIn.
 
 ## Anti-patterns (flag these)
 

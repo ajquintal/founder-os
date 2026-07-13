@@ -2,7 +2,7 @@
 
 **The world-class spine every Founder OS venture inherits — the opposite of the vibe-coding nightmare (no security, no roles, no structure).**
 
-This is the non-negotiable standard. Hand it to Fable / Claude Code / any builder as the contract: a venture is not "world-class engineered" until every control here is either **enforced by the starter** or **explicitly added by the venture**. It is industry-agnostic — it reads nothing about the business, so every venture, current and future, runs on it.
+This is the non-negotiable standard. Hand it to Fable / Claude Code / any builder as the contract: a venture is not "world-class engineered" until every control here is either **enforced by the starter** or **explicitly added by the venture**. Its security and engineering **core** is industry-agnostic — those controls read nothing about the business, so every venture runs on them. But the **compliance layer (§9) and the go-live gate read from the venture's model**: software/SaaS is one archetype, not the baked-in path — a physical-goods, food, services, or funds-handling venture triggers a different regime set and a different launch gate.
 
 It pairs with two things and never contradicts them:
 - **`starters/saas/CLAUDE.md`** — the per-repo operating contract (definition of done, commits, secrets, RLS, edge-function auth, admin authz, testing). This doc is the *why* and the *full-stack checklist*; `CLAUDE.md` is the *in-repo enforcement*. Where this doc cites a control the starter already ships, it points at the exact file.
@@ -28,7 +28,9 @@ Tags are greppable on purpose. `grep '\[VENTURE\]'` = your build backlog. `grep 
 
 # ⭐ MINIMUM BAR — before any real-money launch (one page)
 
-> Taking real money = accepting real liability. If **any** box below is unchecked, you are **not** cleared to switch Stripe to live keys. This is the go-live gate; the full standard is below. (Mirrors `CLAUDE.md §1` definition of done and the `/ship` payments-go-live gate.)
+> Taking real money = accepting real liability. This is the **go-live gate**; what clears it is **read from the venture's model**. For a **software/SaaS** venture it means *"cleared to switch payments to live keys"* with the security core below in force. For a **physical-goods, food, or services** venture it means — often *instead* — **product-liability insurance in force, safety/labeling/permit compliance passed, and unit economics validated**. If **any** box that applies to the venture is unchecked, you are **not** cleared to launch. The full standard is below. (Mirrors `CLAUDE.md §1` definition of done and the `/ship` go-live gate.)
+
+**Clear the boxes that match the venture's model — not every venture needs every box.** The four groups immediately below are the **software / data / payments** core: they apply in full to a venture that runs its own app, and a venture on a **hosted platform** (Shopify, Squarespace, a booking SaaS) satisfies most of them *through the platform* — confirm that, don't rebuild it. The **Product, safety & liability** group applies to physical-goods, food, services, and funds-handling ventures. A pure SaaS leans on the first four groups; a hosted-storefront goods brand leans mainly on the last group plus §9.
 
 **Environments & secrets**
 - [ ] Prod is a **separate** Supabase project + Stripe **live** account from staging/local; no prod secret exists in any lower env. `[CONFIG]`
@@ -51,13 +53,20 @@ Tags are greppable on purpose. `grep '\[VENTURE\]'` = your build backlog. `grep 
 - [ ] Error tracking (Sentry) live; audit log records privileged actions. `[VENTURE]`
 - [ ] Analytics is consent-gated. `[VENTURE]`
 
+**Product, safety & liability** *(physical goods · food · services · regulated categories · funds — read from the venture's model)*
+- [ ] **Product-liability + general-liability insurance in force** before the first unit ships or first service is delivered — for any physical product or regulated service. `[VENTURE]`
+- [ ] Product **safety-tested and labeled** to the category standard (§9): safety/flammability testing passed, mandatory labeling correct, Prop 65 handled where you sell into CA. `[VENTURE]`
+- [ ] Regulated **service/trade**: required license(s) + permits issued; professional-liability/E&O or bond in force. `[VENTURE]`
+- [ ] **Unit economics validated on real landed cost** — the offer is profitable per unit, not merely live (see the finance backbone). `[VENTURE]`
+- [ ] Holding/moving **others' funds** (marketplace/fintech): money-transmitter/MSB licensing-or-exemption analysis + KYC/AML program done (§9). `[VENTURE]`
+
 **Quality & compliance**
 - [ ] CI green on `main` (lint · typecheck · unit · build · e2e); `main` is branch-protected. `[STARTER]`+`[CONFIG]`
 - [ ] A written **rollback path** exists for this deploy (host rollback + DB forward-fix). `[VENTURE]`
-- [ ] The **applicable compliance regime is decided and its controls are in place** (§9) — GDPR/CCPA almost always; PCI-DSS (SAQ-A) whenever you take card payments; HIPAA/LegitScript if health; SOC2-readiness if B2B. `[VENTURE]`
+- [ ] The **applicable compliance regime(s) — read from the venture's regulatory surface — are decided and their controls are in place** (§9): GDPR/CCPA for personal data; PCI-DSS (SAQ-A) if you take card payments; HIPAA/LegitScript if health; SOC2-readiness if B2B; **product-safety + labeling + Prop 65** if you sell goods; **food-safety permits** if food; **licensure** if a regulated service; **money-transmission/KYC/AML** if you hold others' funds. `[VENTURE]`
 - [ ] Access register current; MFA on every tool account; no shared logins. `[VENTURE]`
 
-**One-line rule:** *shipped + merged + verified in prod, secure by default, with a rollback path and the right compliance regime in force — or it does not take money.*
+**One-line rule:** *the offer is proven and its unit economics work; the applicable compliance regime and insurance are in force; and any software you run is shipped, verified in prod, secure by default, and reversible — or it does not take money.*
 
 ---
 
@@ -299,11 +308,15 @@ order by tablename, cmd;
 
 # 9. Compliance-by-design
 
-**Intent:** the applicable regime is decided **at concept (go/no-go)**, not discovered after launch — because it constrains vendor choice, data model, and GTM. This operationalizes `guardrails.md` ("regulated categories = a hard dependency, not a formality; no medical/legal claims without review").
+**Intent:** the applicable regime(s) are decided **at concept (go/no-go)**, not discovered after launch — because they constrain vendor and supplier choice, the product and data model, insurance, and GTM. **Read the regime from the venture's model, not from an assumption that it is software** — SaaS/subscription is one archetype among goods, food, services, and funds-handling. This operationalizes `guardrails.md` ("regulated categories = a hard dependency, not a formality; no medical/legal/financial claims without review").
 
-**Decision rule:** in `/go-no-go`, answer *"which regimes apply?"* If health/PHI or regulated advertising is in scope, that is a **hard dependency** gating launch and spend — flag it to Tony.
+**Decision rule:** in `/go-no-go`, read the venture context and answer *"what is our regulatory surface, and which regimes does it trigger?"* Derive it from what the venture actually **does** — what it makes/sells, what data it touches, whether it takes or moves money, what it claims, and where it operates — never from a default that it is software. Apply **every** matching regime from both matrices below. Any regime that gates launch or spend (health/PHI, regulated advertising, product safety/liability, licensure, funds-handling) is a **hard dependency** — flag it to Tony. When in doubt whether a regime applies, treat it as applicable and flag it for professional (attorney / CPA / QSA) review.
 
 ### Regime → controls matrix
+
+> **Read the venture's regulatory surface first, then apply every regime that matches — from *both* tables below.** SaaS/subscription software is one archetype, not the default: a physical-goods, food, services, or funds-handling venture triggers table **B** and often little of table **A**. Where two regimes overlap, satisfy the stricter. Each row is *regime · applies-when (read from the venture) · concrete control · gate.*
+
+**A. Digital, data & payments regimes** — apply to any venture with a software, data, or card-payments surface.
 
 | Regime | Applies when | Concrete controls (→ section) | Gate |
 | --- | --- | --- | --- |
@@ -313,6 +326,18 @@ order by tablename, cmd;
 | **PCI-DSS** | You accept card payments — **almost every venture that takes money**. Scope depends entirely on *how* card data is handled. | **Use a hosted processor (Stripe Checkout / Elements / Payment Links) so card data (PAN) never touches your servers or logs — this keeps you in the lightest self-assessment tier (SAQ-A).** Never store/transmit/log full card numbers; TLS everywhere (§5); processor's PCI DSS Level-1 attestation on file; if you ever handle raw PAN, scope explodes (SAQ-D + QSA) — don't, unless a lawyer/QSA signs off. | Before taking live card payments. |
 | **SOC 2 (readiness)** | You sell to businesses/enterprise that will ask for it. Not required to *start*, but readiness is cheap to bake in. | The whole backbone maps to Trust Services Criteria: access control + RBAC (§2), change management via CI + branch protection (§8), encryption (§5), monitoring/logging/**audit** (§7), backups/DR (§6), vendor management (§10), incident response. **Readiness = these controls operating + evidence retained** (CI logs, access register, audit logs) — not yet a formal audit. | Bake in from day one if B2B; formal audit when a deal requires it. |
 
+**B. Physical goods, consumer-product, services & funds-handling regimes** — apply per what the venture makes, sells, serves, or moves. For a non-software venture these may be the *only* regimes that apply. Identify the venture's real regulatory surface and apply each that matches; treat product-liability insurance as a launch dependency, not paperwork.
+
+| Regime | Applies when (read from the venture) | Concrete control | Gate |
+| --- | --- | --- | --- |
+| **Product safety & liability** (consumer / manufactured goods) | The venture makes, imports, private-labels, or resells a **physical product**. | **Product-liability + general-liability insurance bound before the first unit ships.** Safety-test to the category standard — CPSC + applicable **ASTM** for consumer goods; **CPSIA** (third-party testing + tracking label) for children's products; flammability (e.g. **ASTM F2417/F2058** for candles, **16 CFR 1610** for textiles). Documented product specs + supplier QA + **lot/batch traceability** for recall; CPSC incident-reporting readiness. | Insurance in force + safety testing passed **before first sale**. |
+| **Labeling & category rules** (FDA / FPLA / USDA / TTB) | The venture sells **food, beverages, dietary supplements, cosmetics, drugs, or alcohol** — anything ingested, applied to the body, or otherwise label-regulated. | Mandatory label elements per **FPLA** + the category's FDA/USDA/TTB rules (identity, net quantity, ingredients/INCI, allergens, warnings, "distributed by"). Respect the **cosmetic-vs-drug line** — a claim to treat/prevent makes it a regulated drug (`guardrails.md`: no medical claims without review). Facility registration where required (FDA food-facility; **MoCRA** cosmetic-facility). | Compliant labels + any required registration **before first sale**. |
+| **Prop 65** (California) | You sell into **California** a product that could expose users to a listed chemical — broad; catches many candles, cosmetics, foods, hardware. | Assess exposure against the Prop 65 list; provide the "clear and reasonable" **warning** where required or document why exempt; push warning/indemnity obligations onto suppliers in the supply contract. | Warning decision documented **before selling into CA**. |
+| **FTC advertising & "Green Guides"** | **Any** venture (physical *or* digital) making performance, health, "clean/natural," environmental/"sustainable," "Made in USA," or endorsement/testimonial claims. | Every objective claim **substantiated before it runs** (competent + reliable evidence). Environmental claims meet the FTC **Green Guides** (no unqualified "eco-friendly/biodegradable/recyclable"); "Made in USA" meets the all-or-virtually-all standard; disclose material connections for endorsements. No medical/legal/financial claims without review (`guardrails.md`). | Substantiation on file **before the claim is published**. |
+| **Food safety** (FDA FSMA / local health dept.) | The venture **produces, handles, or serves food/beverages** — packaged CPG, restaurant, commissary, or food service. | Packaged food: HACCP/preventive-controls plan + **FDA food-facility registration** (FSMA). Prepared/served food: **local health-department permit + inspection + food-handler certification**. Home-produced: **cottage-food-law** limits. Allergen controls + recall plan throughout. | Permits/registration + safety plan **before producing or serving**. |
+| **Licensure & permits** (regulated services / trades) | The venture sells a **regulated service** or runs a regulated activity — professional (legal, medical, financial advice, accounting), trades (contractor, electrical), childcare, transport, real estate, liquor. | Hold the required **state/local license(s)** for the entity and each practitioner; carry mandated **professional-liability/E&O or bonding**; honor scope-of-practice + disclosure rules; verify credentials of anyone delivering the service. | License(s) issued + insurance/bond in force **before delivering the service**. |
+| **Money transmission / KYC / BSA-AML** | The venture **holds, moves, or takes custody of other people's funds** — marketplace payouts, wallets, escrow, lending, payment facilitation, crypto. | Prefer routing funds through a **licensed processor / BaaS / marketplace-facilitator** so you are *not* the transmitter. If you take custody: assess **state money-transmitter licensing + FinCEN MSB registration**; run **KYC/CIP + BSA-AML program + OFAC screening + SAR** filing; **segregate customer funds**. | Licensing-or-exemption analysis + KYC/AML program **before holding or moving third-party funds**. |
+
 ### Checklist
 - [ ] Applicable regime(s) decided in `/go-no-go`, documented in the venture context. `[VENTURE]`
 - [ ] GDPR/CCPA baseline (privacy policy, consent, DSAR/deletion, DPAs) in place before collecting personal data. `[VENTURE]`
@@ -320,6 +345,12 @@ order by tablename, cmd;
 - [ ] If regulated category: LegitScript certification obtained before ads/payments. `[VENTURE]`
 - [ ] If taking card payments: PAN kept off your servers via a hosted processor (SAQ-A), never logged/stored. `[VENTURE]`
 - [ ] If B2B: SOC2-readiness controls operating + evidence retained. `[VENTURE]`
+- [ ] If selling a **physical product**: product-liability + GL insurance bound, safety testing to the category standard passed, and labeling (+ Prop 65 for CA) compliant before first sale. `[VENTURE]`
+- [ ] If **food / cosmetics / supplements / regulated goods**: labeling correct + any facility registration/permits obtained before first sale. `[VENTURE]`
+- [ ] For **any advertised claim**: substantiated before publish; environmental claims meet the FTC Green Guides; no medical/legal/financial claims without review. `[VENTURE]`
+- [ ] If **food is produced/served**: safety plan + FDA/local-health permits in place before producing or serving. `[VENTURE]`
+- [ ] If a **regulated service/trade**: required license(s)/permits issued + professional-liability/bond in force before delivering. `[VENTURE]`
+- [ ] If **holding/moving others' funds**: money-transmitter/MSB licensing-or-exemption analysis + KYC/AML program before launch. `[VENTURE]`
 
 ---
 
@@ -372,6 +403,6 @@ order by tablename, cmd;
 ## Ownership summary — starter vs. venture
 
 - **The starter (`starters/saas`) already enforces the hard security core:** RLS-by-default with the full policy pattern, the anon/service-role split, explicit per-function `verify_jwt` with self-auth exceptions, signature-verified + idempotent webhooks, the `VITE_*` public boundary, the pre-commit secret-guard, versioned append-only migrations, DB CHECK constraints, and CI (lint · typecheck · unit · build · e2e) + Conventional Commits + the definition of done. Inherit these; never weaken them.
-- **Every venture must add, before a real-money launch:** typed roles + server-side admin checks, CORS lock + input-validation layer + rate limiting, PII classification/retention/deletion, a **tested** backup restore + uptime monitor + SLO, Sentry + consent-gated PostHog + an audit log, branch protection + supply-chain scanning in CI, a documented rollback path, the **decided compliance regime** (§9), and the **access register + MFA + on/offboarding** discipline (§10).
+- **Every venture must add, before a real-money launch:** typed roles + server-side admin checks, CORS lock + input-validation layer + rate limiting, PII classification/retention/deletion, a **tested** backup restore + uptime monitor + SLO, Sentry + consent-gated PostHog + an audit log, branch protection + supply-chain scanning in CI, a documented rollback path, the **decided compliance regime** (§9), and the **access register + MFA + on/offboarding** discipline (§10). For a **non-software venture** (physical goods, food, services, marketplace), the launch-gating adds come from §9 and the minimum bar instead — **product-liability insurance in force, safety/labeling/permit compliance, and validated unit economics** — even where few of the software controls above apply.
 
 **If a control is `[STARTER]`, you keep it. If it's `[CONFIG]`, you turn it on. If it's `[VENTURE]`, it's on your pre-launch backlog — and it's on the minimum bar for a reason.**

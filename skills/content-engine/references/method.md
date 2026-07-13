@@ -67,7 +67,7 @@ Pick the one number that proves the pillar compounds toward revenue: list adds, 
 
 **Lead pillar:** Protocol precision — it *is* the wedge (execution layer + blood+device fusion), the one thing no competitor ships.
 
-**Guardrails applied:** all drafts, nothing auto-posts; clinical/premium voice, no "wellness journey"; no medical claims and never "physician review"/"medical team"; no LYV cross-sourcing.
+**Guardrails applied:** all drafts, nothing auto-posts; clinical/premium voice, no "wellness journey"; only substantiated claims, regulated claims routed to review (per the venture's claims guardrails); no LYV cross-sourcing.
 
 ## Anti-patterns (flag these)
 

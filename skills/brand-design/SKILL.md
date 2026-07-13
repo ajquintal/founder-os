@@ -50,7 +50,7 @@ Every color pairing carries a **WCAG AA pass/fail** note; everything is a **draf
 - **Positioning-driven.** Attributes derive from the `/positioning` pillars. If positioning is missing, produce a *provisional* frame and flag it — don't guess a brand from nothing.
 - **WCAG AA is non-negotiable.** Body text ≥ 4.5:1, large text (≥ 24px, or ≥ 18.66px bold) and UI/graphical objects ≥ 3:1, focus indicators ≥ 3:1 against adjacent colors. Every pairing is validated (route to `/accessibility-review`). An inaccessible pair is never shipped as final.
 - **Token hand-off is exact.** Tokens use the starter's shadcn variable names and `H S% L%` format so they paste in without rework. Extend the config (add a brand ramp / chart tokens); never fork it.
-- **Industry-agnostic.** Read the aesthetic from the venture context; never hard-code a category's look. Respect venture claims guardrails (e.g., EE: no medical claims; never "physician review"/"medical team"; never imply a live team/cohort dashboard pre-contract in any asset).
+- **Industry-agnostic.** Read the aesthetic from the venture context; never hard-code a category's look. Honor the venture's claims & regulatory constraints (from its `venture-context` + `engineering-backbone §9`); make only substantiated claims; route any regulated claim (health / financial / legal / environmental) for professional review; never promise a capability the venture can't deliver today.
 - **LYV firewall.** Never reuse LYV brand assets, kits, fonts, or audiences for a solely-owned venture.
 
 ## Tools & handoffs (this module orchestrates a stack)

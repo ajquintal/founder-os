@@ -109,7 +109,7 @@ Once proven: 70% the channel that booked the calls / 20% lifecycle+referral / 10
 | Welcome | freemium signup / labs upload | 4 over 7d | email + 1 SMS | deliver first Edge Score win → $199 unlock |
 | Nurture | on list, unconverted | weekly, behavior-segmented | email | pillar value → $199 → ~$99/mo |
 | Winback | dormant 30/60/90d | 3 touches | email + 1 SMS | re-activate or sunset |
-No medical claims; no "physician review"/"medical team"; never imply a live cohort dashboard.
+Only substantiated claims; regulated claims routed to review; no capability implied the venture can't deliver (per the venture's claims guardrails).
 
 **6 · Partnerships/referral**
 | Program | Partner type | Structure | Built on |
@@ -127,7 +127,7 @@ LYV firewall: none sourced from LYV.
 
 **Single metric it lives on now:** booked qualified B2B calls (the Aug 3 kill gate). **Demand gate:** B2C partially proven (live revenue); B2B unproven → $0 paid, warm-outbound-first. **Failure-mode flags:** resist building the full lifecycle/PR/paid machine before the outbound books calls (overbuild + architecture-before-revenue).
 
-**Guardrails applied:** drafts only; $0 until proven; LYV firewall on audiences/partners; no medical claims / no "physician review"; no live-dashboard implication pre-contract; prices "evolving — confirm live".
+**Guardrails applied:** drafts only; $0 until proven; LYV firewall on audiences/partners; only substantiated claims, regulated claims routed to review, no capability implied the venture can't deliver (per the venture's claims guardrails); prices "evolving — confirm live".
 
 ---
 
@@ -140,5 +140,5 @@ Runs clean with no clinical/SaaS leakage: **motion** = demand/experience-led + l
 - Six channels lit at once instead of one anchor + highest-EV-first (too-many-fronts).
 - Overbuilding multi-touch attribution or the full lifecycle/PR stack before volume/demand justifies it (complexity bias; delays the call that actually closes).
 - A marketing KPI tree that doesn't ladder into the venture north-star (vanity reach).
-- Implying a live cohort dashboard, or making a medical/legal claim, to make the pitch land.
+- Implying a capability the venture can't deliver, or making an unsubstantiated or regulated claim, to make the pitch land.
 - Auto-sending lifecycle emails/SMS or publishing PR without Tony's approval.

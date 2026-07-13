@@ -2,6 +2,16 @@
 
 **The world-class engineering architecture behind a vibe-coded idea.**
 
+> **This is ONE starter — the custom-software (SaaS web-app) archetype — not the default path.**
+> Most ventures should **buy or assemble off-the-shelf** instead of building custom: a Shopify
+> storefront, a booking tool (Cal.com/Resy), a POS (Square/Toast), a site builder, or Airtable
+> will take the first dollar faster and cheaper, with no code to maintain. Needless custom build is
+> Tony's #1 failure mode. Choose per venture via the **buy-vs-build-vs-none decision** in
+> [`/venture-bootstrap`](../../skills/venture-bootstrap/SKILL.md): default to off-the-shelf, and
+> clone this starter only when the venture genuinely needs custom software (the core value *is* the
+> software, a data/workflow moat, or an integration no platform delivers). Physical-product and
+> service ventures usually need little or none of this.
+
 An opinionated, production-grade starting point for a new SaaS venture. Clone it,
 rename it, define your data model, and you begin from a proven architecture instead
 of a blank repo. Every choice here is deliberate and documented.

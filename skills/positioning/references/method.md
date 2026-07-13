@@ -50,4 +50,4 @@ TREND:      personalized-health AI heavily funded; wellness-tech ~$65B (2026) �
 | 4 | Clinical-grade precision | Decisions on baselines, thresholds, and data | BRI / PhenoAge scoring IP | "Is this rigorous or vibes?" |
 | 5 | Performance, not aging | For men who refuse to decline | ICP language, transformation proof | "Is this for old / sick people?" |
 
-Guardrail applied: pillar 4 claims precision via the scoring IP — **not** "physician review" or a "medical team." EE's refer-out model bans that language in customer-facing copy.
+Guardrail applied: pillar 4 claims precision via the scoring IP, every claim tied to proof — only substantiated claims, with any regulated claim routed to review per the venture's claims guardrails.

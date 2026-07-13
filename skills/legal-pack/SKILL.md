@@ -30,7 +30,7 @@ The legal backbone. Stands up the whole foundation a real company needs — the 
 ## Load first
 1. `founder-profile/PROFILE.md` — governing question, voice; `founder-profile/guardrails.md` (claims/compliance = hard dependency, no legal claims without review, irreversible actions need approval + rollback, secrets never in text, LYV firewall); `founder-profile/voice-and-brand.md` (banned words).
 2. Active `ventures/<slug>/venture-context.md` — **jurisdiction, ownership (solo / partners), industry, regulatory-surface, stage, and fundraising intent**. Never assume US/Delaware; never hard-code an industry.
-3. `docs/engineering-backbone.md §9 (Compliance-by-design)` — the regime→controls matrix. **Consume it; do not re-derive the controls here.**
+3. `docs/engineering-backbone.md §9 (Compliance-by-design)` — the regime→controls matrix. **Consume it, and add any industry-specific regimes it lacks for this venture** — §9 is a starting set, not exhaustive (a physical-goods, services, or environmental venture may need regimes §9 doesn't list: e.g. product-liability/safety, labeling, licensure, environmental). Don't re-derive controls §9 already specifies.
 4. Hand-off peers: `/setup-checklists` (the operational entity/compliance checklist), `/finance-ops` (entity-tax election, QSBS/83(b), sales-tax nexus — the finance side of the entity), `/naming-brand` (which already raised the trademark-collision flag).
 
 ## Method (full detail, contract library, compliance matrix & worked example in `references/method.md`)
@@ -56,7 +56,7 @@ State the **not-legal-advice** disclaimer at the top; state assumptions inline; 
 - **Flag, never clear.** Trademark, entity, and compliance outputs are risk signals + mapped paths — a mark is never "available/clear," an entity is never "the right one," here. Formal search / opinion precedes commit.
 - **Compliance is decided at concept** (`/go-no-go`), consumed from `engineering-backbone §9`. A regulated-category launch (health/PHI, LegitScript, licensure) is a **hard dependency gating launch and spend**, flagged to Tony — not a formality.
 - **Jurisdiction-flag everything that varies** — entity type, employment / non-compete enforceability, privacy law, licensure. Never default to US/Delaware.
-- **No medical/legal claims** without review; honor venture language guardrails (EE: never "physician review" / "medical team"; refer-out model). **Secrets, EINs, SSNs, and credentials never appear in text, logs, or committed files** — reference where they live, never echo a value. **LYV firewall** — keep venture entities, data, and relationships siloed.
+- **No unsubstantiated or unreviewed regulated claims** (health / financial / legal / environmental); honor the venture's own claims & regulatory constraints from its `venture-context`. **Secrets, EINs, SSNs, and credentials never appear in text, logs, or committed files** — reference where they live, never echo a value. **LYV firewall** — keep venture entities, data, and relationships siloed.
 - Clinical, precise voice; banned words out (journey, holistic, guru, revolutionary, game-changer, hack). Industry-agnostic — read the venture context.
 
 ## Examples & evals

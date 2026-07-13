@@ -79,7 +79,7 @@ A flat list: every asset (emails, page, creative, proof, FAQ, checkout), its own
 
 **Post-launch:** T+6 downsell non-buyers (payment plan) [draft]; T+7 retro vs target; T+7 go/refine/kill; T+14 onboard buyers toward $99/mo.
 
-**Guardrails applied:** every send is an approval gate (drafts only); no spend without approval; no medical claims, never "physician review"/"medical team"; LYV audience never used.
+**Guardrails applied:** every send is an approval gate (drafts only); no spend without approval; only substantiated claims, regulated claims routed to review (per the venture's claims guardrails); LYV audience never used.
 
 ## Anti-patterns (flag these)
 

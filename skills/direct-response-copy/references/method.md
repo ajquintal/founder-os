@@ -31,4 +31,4 @@ ALT HOOK 2: The Bloomberg terminal for your body. Upload your labs to boot it up
 [DRAFT — not for send/publish until Tony approves]
 ```
 
-Guardrails applied: power words (system, protocol, calibrate, drift, baseline); no banned words; no fake urgency; precision, not medical claims — the copy never says "physician review" or "medical team."
+Guardrails applied: power words (system, protocol, calibrate, drift, baseline); no banned words; no fake urgency; precision, not unsubstantiated claims — only substantiated claims, with any regulated claim routed to review per the venture's claims guardrails.

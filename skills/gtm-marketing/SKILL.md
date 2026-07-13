@@ -62,8 +62,7 @@ Plan/campaign → `marketing:campaign-plan`. Copy/content → `marketing:content
 - **$0 until demand is proven**, then scale only on proven unit economics (max CAC from `/offer-architect`). Kill losers at the numeric threshold — no "one more week". No spend, send, or publish without Tony's approval. (Guardrail.)
 - **Highest-EV / warm channel first; one anchor channel.** Actively flag the founder failure modes — overbuild (building the engine before booking a call) and too many concurrent fronts.
 - Voice per `founder-profile/voice-and-brand.md`; banned words out. **LYV firewall** on all audiences, lists, and partners.
-- **Claims (G-claims):** no medical or legal claims; any Rx/peptide/GLP or health claim on public pages is compliance-reviewed (LegitScript-grade); never "physician review" / "medical team".
-- **Roster/dashboard (G-dashboard):** never imply or promise a live team/cohort dashboard pre-contract — quarterly report until a contract is signed.
+- **Claims & capability (G-claims):** make only substantiated claims, and never imply a capability or deliverable the venture can't provide today. Honor the venture's own claims & regulatory constraints (from its `venture-context` + `engineering-backbone §9`); route any regulated claim (health / financial / legal / environmental) for professional review before publish.
 - **Price/economics** come from `/offer-architect`; never invent. Carry the venture caveat "prices evolving — confirm live before customer-facing use."
 - **Attribution:** pragmatic first (self-report + UTM/GA4 last-touch); don't build multi-touch before volume justifies it (complexity-bias guard).
 

@@ -5,7 +5,7 @@ A dashboard is an operating instrument, not a report. If a number can't change a
 
 ## Step 1 — Frame the machine
 From `venture-context.md`, write down:
-- Revenue lines (subscription tiers, cohorts, licenses) and their price points.
+- Revenue lines and their price points, and the venture's **money model** (subscription / goods-commerce / services / marketplace) — this sets the money strip in Step 4.
 - The **core value action** — the single thing a customer does that means they're getting the value they pay for.
 - Stage + current sprint goal (the north-star serves the active sprint, not a hypothetical future state).
 
@@ -17,7 +17,14 @@ Decompose into 3–5 **input drivers** you can move directly (acquisition, activ
 
 ## Step 4 — Tag leading vs lagging
 - **Leading**: predictive, movable this week (activation rate, adherence depth, retention curve).
-- **Lagging**: confirms outcome, usually money (MRR, NRR, CAC payback).
+- **Lagging**: confirms outcome, usually money. The money-strip metrics follow the venture's **money model** (from venture-context), never defaulted to subscription:
+
+| Money model | Money strip (lagging) |
+|---|---|
+| Subscription / recurring | MRR, NRR, churn, CAC payback |
+| Goods / commerce | AOV, repeat-purchase rate, contribution margin, CAC payback |
+| Services | utilization, billings / realization, revenue per delivery unit |
+| Marketplace | GMV, take-rate, buyer/seller retention |
 
 Primary board is leading-weighted; lagging lives in a short "money strip."
 

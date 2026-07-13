@@ -68,6 +68,6 @@ State a risk level (likely-open / contested / taken-looking) from what's observa
 
 **Brand-direction brief — "Executive Edge Boardroom":**
 - **Positioning:** For leadership teams who refuse performance decline, Executive Edge Boardroom is the clinical performance program that runs each executive on a closed protocol loop and reports the team's baseline movement — unlike coaching or lab panels, it is the execution layer, not advice.
-- **Voice:** clinical, precise, premium. Do: lead with the measured outcome, name the loop. Don't: promise a "team dashboard" pre-contract; don't say "medical team."
+- **Voice:** clinical, precise, premium. Do: lead with the measured outcome, name the loop. Don't: promise a capability the venture can't deliver yet, or make a regulated claim without routing it to review (honor the venture's claims & regulatory constraints).
 - **Verbal identity:** tagline direction — *"The performance operating system for your leadership team."* Sub-brand pattern: `Executive Edge <Noun>` (Boardroom, Operator, Private).
 - **Before you commit:** formal TM search on "Boardroom" in-class; confirm handles; purchase on approval; drafts only.

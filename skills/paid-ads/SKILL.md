@@ -36,8 +36,7 @@ A paid plan that spends $0 until demand is proven, then tests small against know
 - $0 until demand is proven; then small tests only. Never scale an unproven angle.
 - Kill fast: enforce the spend cap — a losing angle dies at the cap, no "one more day."
 - Voice per `founder-profile/voice-and-brand.md`; no banned words. LYV firewall on audiences and creative.
-- **Claims (G-claims):** on public pages, any Rx / peptide / GLP or health claim must be compliance-reviewed (LegitScript-grade) — never state medical claims or "physician review" / "medical team".
-- **Roster/dashboard (G-dashboard):** never imply or promise a live team/cohort dashboard pre-contract — roster reporting is a quarterly report until a contract is signed.
+- **Claims & capability (G-claims):** make only substantiated claims, and never imply a capability or deliverable the venture can't provide today. Honor the venture's own claims & regulatory constraints (from its `venture-context` + `engineering-backbone §9`); route any regulated claim (health / financial / legal / environmental) for professional review before publish.
 - **Price:** pull prices from `/offer-architect`; if none exists, mark [PRICE TBD] and request it — never invent. Beside any emitted price, carry the venture caveat "prices evolving — confirm live before customer-facing use."
 
 ## Examples & evals

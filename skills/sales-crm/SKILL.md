@@ -50,7 +50,7 @@ Everything routes to the offers and motions defined in venture-context. Never ha
 - **LYV firewall.** Never source, import, or enrich a solely-owned venture's CRM from LYV mailboxes, relationships, or lists. Ambiguous origin = LYV-originated until Tony confirms. Flag, don't cross-source.
 - **Contracts & signatures are gated.** Any contract/e-sign → flag legal review (compose `legal:review-contract` / `legal:signature-request`); execution is an irreversible, human-approved action.
 - **Discounts & pricing are gated.** Pull every price from `/offer-architect`; never invent one. Respect venture floors. Discounts past the approval threshold or below floor → approval gate, never auto-applied.
-- **No medical/legal claims** in scripts, sequences, or proposals; compliance-review regulated copy. Honor venture language guardrails (e.g., EE: never "physician review"/"medical team"; never promise a live team/cohort dashboard pre-contract).
+- **Only substantiated claims** in scripts, sequences, or proposals; compliance-review regulated copy. Honor the venture's own claims & regulatory constraints (from its `venture-context` + `engineering-backbone §9`); route any regulated claim (health / financial / legal / environmental) for professional review, and never promise a capability or deliverable the venture can't provide today.
 - **Route to highest-FIT offer, not highest price.** A mis-sold deal churns and costs more than it books.
 - **Forecast in weighted dollars**, never vibes. Every metric maps to money or a decision.
 - Clinical, precise, active voice; banned words out. Secrets never in text. Never hard-code an industry.

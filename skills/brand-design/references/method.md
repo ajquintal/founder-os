@@ -263,7 +263,7 @@ The single source of truth. Keep it to ~2 pages; a cheaper model reads it to sta
 
 **Layer 5 — asset workflow:** the B2B sell-kit one-pager → `canvas-design` (original, PDF); LinkedIn posts → **Canva MCP** from the EE brand kit; the Daily Edge Score dashboard mock → **dataviz** (chart tokens above); the funnel/product → `starters/saas` + these tokens. Copy on all of it → `/ux-copy`; audited by `/accessibility-review`.
 
-**Guardrails applied:** original marks only (no imitation); **gold-on-light body text flagged and fixed** (2.3:1 → use gold as fill/on-dark/large only); no medical claims, never "physician review"/"medical team"; never imply a live cohort dashboard pre-contract; everything a draft; no LYV assets reused.
+**Guardrails applied:** original marks only (no imitation); **gold-on-light body text flagged and fixed** (2.3:1 → use gold as fill/on-dark/large only); only substantiated claims, any regulated claim routed to review per the venture's claims & regulatory constraints; never promise a capability the venture can't deliver today; everything a draft; no LYV assets reused.
 
 ---
 

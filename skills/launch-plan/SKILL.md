@@ -39,8 +39,7 @@ A phased launch plan with owners, relative dates, a hard launch-readiness gate, 
 - Drafts only; external sends and cart-open are explicit approval gates — never auto-fire.
 - No-go if any gate criterion fails. State it plainly; don't launch to hit a date.
 - No spend without approval. Voice per `founder-profile/voice-and-brand.md`; no banned words. LYV firewall on audience/assets.
-- Respect venture claims guardrails (EE: no medical claims; never "physician review"/"medical team"); on public pages, Rx/peptide/GLP or health claims must be compliance-reviewed (LegitScript-grade).
-- Never imply a live team/cohort dashboard pre-contract — reference only what ships today.
+- **Claims & capability:** make only substantiated claims, and never imply a capability or deliverable the venture can't provide today — reference only what ships now. Honor the venture's own claims & regulatory constraints (from its `venture-context` + `engineering-backbone §9`); route any regulated claim (health / financial / legal / environmental) for professional review before publish.
 - Any emitted copy or email sequence carries a **[DRAFT — not for send/publish until approved]** label.
 
 ## Examples & evals

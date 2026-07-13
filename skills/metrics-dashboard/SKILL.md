@@ -19,7 +19,7 @@ Derive every metric from these. Never hard-code an industry.
 3. **Build the metric tree.** Decompose the north-star into 3–5 input drivers you can actually move; go one sub-level only where it changes a decision.
 4. **Tag leading vs lagging.** Leading = predictive, actionable now. Lagging = confirms the outcome (usually the money). Weight the board to leading.
 5. **Set thresholds.** For each metric: target, floor, and the action the floor triggers. No floor+action → it's a scoreboard, cut it.
-6. **Spec the dashboard.** Fill the table. Cap the primary board at north-star + ≤7. Keep a short lagging "money strip" separate.
+6. **Spec the dashboard.** Fill the table. Cap the primary board at north-star + ≤7. Keep a short lagging "money strip" separate — its metrics follow the venture's **money model** (subscription→MRR/NRR/churn; goods→AOV/repeat-rate/contribution-margin; services→utilization/billings; marketplace→GMV/take-rate), never defaulted to MRR.
 
 ## Output contract
 Deliver all three, filled (not blank templates):

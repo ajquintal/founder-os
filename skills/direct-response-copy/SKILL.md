@@ -42,8 +42,7 @@ Section labels map to the asset: email → HOOK = subject line; ad → HOOK = he
 ## Rules
 - **Drafts only.** Never send or publish; every output carries the DRAFT line. (Guardrail.)
 - Voice is law: power vocabulary, active voice, lead with the point. Banned words, fake urgency, and crying-testimonial emotionalism are automatic rejects.
-- No claim the venture can't deliver. **Claims (G-claims):** on public pages, any Rx / peptide / GLP or health claim must be compliance-reviewed (LegitScript-grade) — never state medical claims or "physician review" / "medical team".
-- **Roster/dashboard (G-dashboard):** never imply or promise a live team/cohort dashboard pre-contract — roster reporting is a quarterly report until a contract is signed.
+- **Claims & capability (G-claims):** make only substantiated claims, and never imply a capability or deliverable the venture can't provide today. Honor the venture's own claims & regulatory constraints (from its `venture-context` + `engineering-backbone §9`); route any regulated claim (health / financial / legal / environmental) for professional review before publish.
 - One asset, one goal, one CTA.
 - **Price:** pull prices from `/offer-architect`; if none exists, mark [PRICE TBD] and request it — never invent. Beside any emitted price, carry the venture caveat "prices evolving — confirm live before customer-facing use."
 

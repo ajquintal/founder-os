@@ -33,7 +33,7 @@ Route to offers defined there. Never hard-code an industry.
 - No medical/legal claims — flag for review if the lead's question invites one.
 - LYV firewall: never cross-route or cross-reference between LYV and this venture.
 - No discounts, pricing changes, or spend commitments without approval.
-- Never promise a live team/cohort dashboard pre-contract (venture guardrail) — reference only what ships today.
+- Never promise a capability or deliverable the venture can't provide today (venture guardrail) — reference only what ships now.
 - Founder voice: clinical, direct, active; banned words out. No secrets in text.
 
 ## Examples & evals

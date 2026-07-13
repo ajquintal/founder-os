@@ -38,8 +38,7 @@ One entity-led plan to rank in search and get cited in AI answers: map → conte
 - Own one cluster before widening; depth beats a thin spread.
 - GEO ≠ keyword stuffing: earn citations with quotable, sourced, structured answers.
 - Voice per `founder-profile/voice-and-brand.md`; no banned words. LYV firewall on content/entities.
-- **Claims (G-claims):** on public pages, any Rx / peptide / GLP or health claim must be compliance-reviewed (LegitScript-grade) — never state medical claims or "physician review" / "medical team". Route any clinical claim to review before publish.
-- **Roster/dashboard (G-dashboard):** never imply or promise a live team/cohort dashboard pre-contract — roster reporting is a quarterly report until a contract is signed.
+- **Claims & capability (G-claims):** make only substantiated claims, and never imply a capability or deliverable the venture can't provide today. Honor the venture's own claims & regulatory constraints (from its `venture-context` + `engineering-backbone §9`); route any regulated claim (health / financial / legal / environmental) for professional review before publish.
 
 ## Examples & evals
 - `references/method.md` — full method + a worked example (Executive Edge).

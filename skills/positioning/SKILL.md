@@ -45,7 +45,7 @@ Plus a pillars table (3–5 rows):
 ## Rules
 - Position *against the alternatives* — every unique attribute must map to a value a named segment cares about, or cut it.
 - Category is a chosen frame that makes the value obvious; reject the crowded default label if a sharper frame wins.
-- Every pillar carries proof — a claim with no evidence is a slogan. Respect the venture's claims guardrails (e.g., EE: no "physician review" / medical claims).
+- Every pillar carries proof — a claim with no evidence is a slogan. Honor the venture's own claims & regulatory constraints (from its `venture-context` + `engineering-backbone §9`); make only substantiated claims and route any regulated claim (health / financial / legal / environmental) for professional review.
 - Sharpen the market-scan wedge; don't reinvent it. Lead with it.
 
 ## Examples & evals

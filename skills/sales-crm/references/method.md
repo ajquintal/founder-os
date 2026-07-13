@@ -225,7 +225,7 @@ After any base operation, return the most-specific link via `airtable:show-airta
 
 # Worked example — Executive Edge OS: CRM + sales setup
 
-> Loads `founder-profile/PROFILE.md` → `ventures/executive-edge/venture-context.md`. B2B sprint focus: corporate cohorts ($30–48k / 6 mo, **floor $30k**) and operator licenses ($25k setup + $2k/mo, or $10k + 15% rev-share). *Prices evolving — confirm live before customer-facing use.* Guardrails in force: DRAFTS ONLY · LYV firewall · no "physician review"/"medical team" · never promise a live team/cohort dashboard pre-contract.
+> Loads `founder-profile/PROFILE.md` → `ventures/executive-edge/venture-context.md`. B2B sprint focus: corporate cohorts ($30–48k / 6 mo, **floor $30k**) and operator licenses ($25k setup + $2k/mo, or $10k + 15% rev-share). *Prices evolving — confirm live before customer-facing use.* Guardrails in force: DRAFTS ONLY · LYV firewall · only substantiated claims (regulated claims routed to review, per the venture's claims guardrails) · never promise a capability the venture can't deliver today.
 
 ## 1. Base: "Executive Edge — Revenue Engine" (Airtable MCP + `airtable:sales-ops`)
 

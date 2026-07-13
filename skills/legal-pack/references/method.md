@@ -103,7 +103,7 @@ The OS **flags collision risk and maps this path**; it **never declares a mark "
 
 ## Area 4 — Compliance regime (decided AT CONCEPT, by industry)
 
-**Consume `engineering-backbone §9` — do not re-derive the controls.** Decide the regime at `/go-no-go`, because it constrains the vendor stack, the data model, and GTM. A regulated-category launch is a **hard dependency gating launch + spend** (guardrail).
+**Consume `engineering-backbone §9`, and add any industry-specific regimes it lacks for this venture** — §9 is a starting set, not exhaustive (a physical-goods, services, or environmental venture may need regimes §9 doesn't list); don't re-derive controls §9 already specifies. Decide the regime at `/go-no-go`, because it constrains the vendor stack, the data model, and GTM. A regulated-category launch is a **hard dependency gating launch + spend** (guardrail).
 
 | Regime | Applies when | Concrete requirements (→ engineering-backbone §) | Gate |
 |---|---|---|---|
