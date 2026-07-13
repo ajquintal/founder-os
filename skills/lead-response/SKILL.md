@@ -11,13 +11,13 @@ Purpose: turn a raw inbound into a qualified, routed, paste-ready reply in the f
 1. `founder-profile/PROFILE.md` — voice, guardrails (DRAFTS ONLY, LYV firewall, claims review).
 2. `ventures/<slug>/venture-context.md` — ICP, offer ladder, pricing, current sprint priority.
 
-Route to offers defined there. Never hard-code an industry.
+Route to the offers — and the venture's actual conversion motion — defined there. A SaaS demo/call is one case, not the default. Never hard-code an industry.
 
 ## Method (full detail + worked examples in `references/method.md`)
 1. **Read the lead.** Extract who they are, what they asked, the channel, and any buying signal or deadline.
 2. **Qualify (triage rubric).** Score three axes: **Fit** (ICP match), **Intent** (buying signal/urgency), **Value** ($ potential + which offer). Roll up to a **Tier**: A (hot, high-fit) / B (nurture) / C (self-serve or decline).
-3. **Route.** Map tier → motion: A → book founder/sales call; B → nurture or lower-tier entry offer; C → self-serve link or courteous decline. Route to the *highest-fit* offer, not the highest price.
-4. **Flag risk.** Medical/legal claim invited? → claims-review flag. LYV crossover? → firewall, do not route. Discount/spend implied? → mark for approval.
+3. **Route.** Map tier → the venture's *actual* high-intent conversion step (not a SaaS demo by default): A → the offer's real next step — a scoping/sales call for high-touch/B2B/services, a direct purchase/checkout link for goods/DTC, platform signup or a booking for a marketplace, a wholesale application for a stockist; B → nurture or a lower-tier entry offer; C → self-serve link or courteous decline. Route to the *highest-fit* offer, not the highest price.
+4. **Flag risk.** Regulated claim invited (health / financial / legal / environmental)? → claims-review flag. LYV crossover? → firewall, do not route. Discount/spend implied? → mark for approval.
 5. **Draft the reply.** Founder voice: open on their stated problem, name the fitting offer, one clear CTA, channel-appropriate length. No fluff, no banned words. A/B variant only when it changes the CTA.
 6. **Recommend next action** — the single move, as a recommendation, not an executed step.
 
@@ -30,7 +30,7 @@ Route to offers defined there. Never hard-code an industry.
 - DRAFTS ONLY. Never send, book, enroll, or reply directly — the send is the founder's.
 - No draft without a tier + rationale first.
 - One CTA per draft; route to highest-fit offer, not highest price.
-- No medical/legal claims — flag for review if the lead's question invites one.
+- No unsubstantiated or unreviewed regulated claims (health / financial / legal / environmental) — flag for professional review if the lead's question invites one; honor the venture's own claims & regulatory constraints (from its `venture-context`).
 - LYV firewall: never cross-route or cross-reference between LYV and this venture.
 - No discounts, pricing changes, or spend commitments without approval.
 - Never promise a capability or deliverable the venture can't provide today (venture guardrail) — reference only what ships now.

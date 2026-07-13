@@ -29,6 +29,8 @@ What "available here" means is precise. Verified against this environment's conn
 
 Ordered build → go-to-market → back office. **Default** is the opinionated pick for a generic venture; **Alternatives** are the credible swaps; **Here?** is the availability tag above.
 
+> **Read this table in two halves.** The top **build/product rows** (frontend · hosting · database · payments-as-Stripe) are the **software / SaaS-web-app archetype** — one archetype, not the universal default. Commerce/goods, marketplace, retail/hospitality, and services ventures **replace that product/commerce spine** per the **archetype tool layer** immediately below. Everything from CRM downward (CRM, email, comms, docs, design, diagramming, dashboards, analytics, accounting, banking, HR, e-sign, support, warehouse, AI) is **archetype-agnostic back office** — every venture uses it as written. Read the venture's archetype from its context, then compose: agnostic back office + the one product/commerce spine that fits.
+
 | Business function | Recommended default | Alternatives | Here? | What it's used for | Setup / connect note | Cost |
 |---|---|---|---|---|---|---|
 | **Product framework / frontend** | Vite + React + TS + Tailwind + shadcn/ui | Next.js, Remix, SvelteKit | **SKILL** | The app UI; ships from `starters/saas` | Clone `starters/saas`; `engineering:*` skills author it | `$0` |
@@ -60,9 +62,29 @@ Ordered build → go-to-market → back office. **Default** is the opinionated p
 
 ---
 
+## The archetype tool layer — the product/commerce spine by venture shape
+
+The master table's build rows assume the **software archetype**. Most ventures the OS runs are **not** a hand-built web app — they sell physical goods, take a cut of a marketplace, ring up in-person sales, or deliver a service. For those, the product/commerce spine is a **platform you configure, not a codebase you ship** (the buy-vs-build-vs-none default from domain 2). Pick the archetype block that matches; keep the whole agnostic back office from the master table. **SaaS is one column here, not the baseline.**
+
+| Archetype layer / function | Recommended default | Alternatives | Here? | What it's used for | Cost |
+|---|---|---|---|---|---|
+| **Commerce / DTC storefront** (physical or digital goods, retail brand) | **Shopify** (storefront + catalog + inventory + checkout + Shopify Tax) | **WooCommerce** (WordPress), BigCommerce, Squarespace Commerce, Shopify Hydrogen (headless) | **DIRECT** (Shopify / WooCommerce) | The store **is** the product surface — no custom app to build; Supabase/Vercel become a custom-surface layer only if the venture truly needs one | `$`→`$$` |
+| **Subscription-commerce** (refills, subscribe-&-save on goods) | **Recharge** or **Skio** (on Shopify) | Ordergroove, Stay AI, native Shopify Subscriptions | **DIRECT** (Shopify app) | Recurring **physical-goods** orders — *not* Stripe Billing seats; the auto-renewal / negative-option regime (`engineering-backbone §9`) applies | `%`→`$$` |
+| **Payments — marketplace / platform** (take a cut, pay sellers/providers) | **Stripe Connect** (Express accounts) | Adyen for Platforms, PayPal Commerce Platform, Lemon Squeezy (merchant-of-record) | **OFF** (Stripe connector) + **DIRECT** (API) | Split payments, seller/provider payouts, KYC onboarding, 1099s — **not** vanilla Stripe; net-vs-gross + payouts-payable per `finance-ops` | `%` |
+| **Inventory / 3PL / fulfillment** (physical goods) | **ShipBob** (3PL) + the storefront's inventory | ShipStation / Shippo (self-ship), Flexport, Cin7 / Katana (inventory + light MRP) | **DIRECT** | Warehousing, pick-pack-ship, multi-channel inventory, landed-cost — the physical-ops backbone the SaaS stack has no row for | `$`→`%` |
+| **Wholesale / B2B ordering** (goods sold into retail) | **Faire** (marketplace) or a **Shopify B2B** channel | Handshake, NuORDER, brandboom | **DIRECT** | Line sheets, wholesale pricing/MOQ, reorder flow, net terms — the wholesale half a DTC brand also runs | `%`→`$` |
+| **POS — retail / hospitality** (in-person sales, F&B) | **Square** (retail / QSR) or **Toast** (full-service restaurants) | Shopify POS (omni-channel retail), Lightspeed, Clover, SpotOn | **DIRECT** | Card-present checkout, tabs/tips, menus/catalog, and **unified online + in-store inventory** | `%`→`$$` |
+| **Booking / scheduling** (services, appointments, classes) | **Cal.com** (dev-friendly) or **Square Appointments** | Calendly, Acuity, Mindbody (fitness/wellness), Booksy | **DIRECT** / **REGISTRY** (Cal.com) | Online booking, calendars, reminders, deposits — the "storefront" of a services venture | `$0`→`$` |
+| **Dispatch / field-service / gig ops** (mobile services, on-demand marketplace) | **Jobber** or **Housecall Pro** (field-service) | ServiceTitan (trades, at scale), Onfleet / Tookan (routing + dispatch), a light custom surface on Supabase for a true two-sided marketplace | **DIRECT** | Job scheduling, dispatch, routing, provider management, invoicing — the ops spine for services + service-marketplaces | `$`→`$$` |
+| **Lifecycle email / SMS — commerce** (DTC retention) | **Klaviyo** | Postscript / Attentive (SMS), Sendlane; keep Customer.io for product-led | **REGISTRY** (Klaviyo) | Abandoned-cart, post-purchase, winback, subscription flows — the DTC retention engine (replaces generic Mailchimp for e-com) | `$0`→`$$` |
+
+**Availability note.** None of these is **LIVE** in-session today; Stripe (for Connect) is **OFF** and one-toggle away, and WordPress.com (→ WooCommerce) is installed-but-off. Before setup, run **`SearchMcpRegistry`** to check for a live connector (a Shopify/commerce, Klaviyo, or Square connector may be present — verify at connect-time, don't assume); otherwise connect **DIRECT** at the vendor (platform app store / API key) and tag it per the legend once live. Most physical-ops platforms are DIRECT by nature (you configure them at the vendor), and the OS operates them read-first, drafts-not-sends, per `docs/mcp-proprietary-layer.md`.
+
+---
+
 ## When to swap the default (industry triggers)
 
-The stack above is deliberately industry-agnostic. Swap on the venture's shape, not on novelty:
+The **archetype tool layer** above is the first-class tooling for each shape; the swap notes here add the *why* plus the regulated / enterprise / content-media nuance that table doesn't carry. The stack is deliberately industry-agnostic. Swap on the venture's shape, not on novelty:
 
 - **E-commerce / physical goods** → add **Shopify** (storefront + inventory + tax) as the product layer; **Klaviyo** for lifecycle email; keep Stripe underneath or use Shopify Payments. Supabase/Vercel become the custom-surface layer, not the store.
 - **Content / media / marketing site** → **WordPress.com** (**OFF** — installed here) or **Webflow / Sanity** (**REGISTRY**) instead of a hand-built frontend when the deliverable is pages, not app logic.
@@ -137,6 +159,20 @@ The **fewest tools that cover every function**, chosen for maximum overlap. This
 **One cheap exception worth adding in week 1:** **Sentry** free tier — error monitoring is insurance the `engineering-backbone` spine expects, and it costs nothing to start.
 **Cost to launch:** effectively **$0–$50/mo** — every tool above has a free or near-free entry tier; Stripe is pure per-transaction; Workspace is the only fixed seat cost.
 **SMS note:** add **Twilio** to the MVP only if the product needs OTP/verify or SMS notifications on day one; otherwise it's a scale-up add.
+
+### The 72h spine by archetype (swap the product rows, keep the back office)
+
+The eight-service spine above is the **software archetype**. For any other shape, keep rows **5–8** (Airtable, Google Workspace, SendGrid, Canva) + the Claude runtime — they are archetype-agnostic — and **replace the product/payments rows 1–4** with the archetype's spine from the layer above:
+
+| Archetype | Product / commerce spine (replaces rows 1–4) | Payments | Add for this shape |
+|---|---|---|---|
+| **Software / SaaS** (as written) | Supabase + Vercel + GitHub | Stripe | PostHog/Sentry at deploy |
+| **Commerce / DTC goods** | **Shopify** (storefront + inventory + checkout + tax) | Shopify Payments / Stripe | Recharge/Skio (refills), a 3PL or ShipStation, Klaviyo |
+| **Marketplace / platform** | Shopify or a light custom surface + a **provider/ops base in Airtable** | **Stripe Connect** | booking/dispatch tool; KYC + payouts + 1099 |
+| **Retail / hospitality** | **Square** / **Toast** POS (+ Shopify for online) | POS-native (Square/Toast) | unified inventory; scheduling |
+| **Services / appointments** | **Cal.com** / Square Appointments (booking) or **Jobber** / Housecall (dispatch) | Stripe / Square | proposals + e-sign; invoicing |
+
+**Cost to launch is unchanged** — every archetype spine has a free or per-transaction entry tier. The rule holds across all of them: **fewest tools that cover every function, product spine bought not built unless the venture genuinely needs custom software.**
 
 ---
 

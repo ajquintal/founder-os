@@ -3,8 +3,9 @@ name: sales-crm
 description: >-
   Stand up and run a venture's entire commercial motion. CRM (Airtable by default — companies,
   contacts, deals, activities) + pipeline stages/definitions/weighted forecasting; lead capture,
-  routing, and fit+intent scoring; the end-to-end sales process (prospect → qualify → demo →
-  proposal → close → handoff); outbound sequences/cadence + inbound; proposals, quotes, and
+  routing, and fit+intent scoring; the end-to-end commercial process tuned to the venture's
+  archetype (subscription/B2B deal ladder · marketplace supply+demand · goods wholesale + self-serve
+  DTC · services project/retainer); outbound sequences/cadence + inbound; proposals, quotes, and
   contracts/e-sign; deal desk + discounting rules; sales metrics (conversion, cycle, CAC feedback
   to finance-ops); and CRM automations. Composes lead-response, direct-response-copy,
   offer-architect. DRAFTS ONLY — never auto-sends outreach or executes a signature. Use when
@@ -25,12 +26,12 @@ Purpose: turn a venture into a running sales machine — one CRM as system of re
 3. `ventures/<slug>/venture-context.md` — ICP, offer ladder + pricing + floors, sales motions, sprint priority, venture guardrails.
 4. Composed skills where they exist: `/offer-architect` (prices, economics, discount floors — never invent price), `/lead-response` (inbound triage + reply drafts), `/direct-response-copy` (outbound + proposal copy), `/metrics-dashboard` (the KPI tree the forecast plugs into).
 
-Everything routes to the offers and motions defined in venture-context. Never hard-code an industry.
+Everything routes to the offers and motions defined in venture-context, and the **pipeline shape is read from the venture's archetype** (subscription/B2B, marketplace, goods, or services — §0 of `references/method.md`). A B2B deal ladder is one case, not the default; never hard-code an industry.
 
 ## Method (full detail + worked example in `references/method.md`)
-1. **CRM setup.** Default to Airtable via the **Airtable MCP** + `airtable:sales-ops`. Scaffold the 4-table core — **Companies · Contacts · Deals · Activities** (+ Leads / Sequences / Deal Desk as scale warrants). Define **pipeline stages with entry/exit criteria and default probabilities**; set the **weighted forecast** = Σ(Amount × Probability) by period / owner / segment.
+1. **Pick the archetype, then set up the CRM.** First read the venture's commercial archetype (§0 of `references/method.md`) — subscription/B2B deal ladder, marketplace (two-sided: a supply + a demand pipeline), goods (a wholesale-account pipeline; DTC self-serve lives outside the CRM), or services (project/retainer) — a B2B deal ladder is one case, not the default. Then default to Airtable via the **Airtable MCP** + `airtable:sales-ops`; scaffold the 4-table core — **Companies · Contacts · Deals · Activities** (+ Leads / Sequences / Deal Desk as scale warrants). Define **the archetype's pipeline stages with entry/exit criteria and default probabilities** (two pipelines for a marketplace); set the **weighted forecast** = Σ(Amount × Probability) by period / owner / segment / side.
 2. **Lead capture + routing + scoring.** Capture via Airtable Form + **Gmail MCP** (inbound email) + **Twilio SMS**. Score two axes — **Fit** (ICP match) and **Intent** (buying signal) — into a Fit×Intent quadrant; route each quadrant to its motion (A → call now; nurture; self-serve; decline). Round-robin or rule-based owner assignment via automation.
-3. **Sales process, end-to-end.** Run **prospect → qualify → demo → proposal → close → handoff**, composing `/lead-response` (qualify + reply), `/offer-architect` (price + package), `/direct-response-copy` (demo/proposal narrative). Each stage has exit criteria and a paste-ready script.
+3. **Sales/commercial process, end-to-end.** Run the archetype's motion — the **prospect → qualify → demo → proposal → close → handoff** deal ladder for subscription/B2B; **supply onboarding** (source → vet → activate → producing) + a self-serve demand lifecycle for marketplace; the **wholesale account motion** (sample → PO → reorder) for goods, with DTC checkout self-serve outside the CRM; **scoping → SOW → delivery → renewal** for services — composing `/lead-response` (qualify + reply), `/offer-architect` (price + package), `/direct-response-copy` (demo/proposal narrative). Each stage has exit criteria and a paste-ready script.
 4. **Outbound + inbound.** A multi-touch **sequence/cadence** across email + LinkedIn + SMS — every touch a DRAFT in a review queue, nothing auto-sent. Inbound gets an SLA and routes through step 2.
 5. **Proposals · quotes · contracts.** Build the quote in Airtable (pricing from `/offer-architect`); narrative via `/direct-response-copy`. Contracts / e-sign → **flag legal review** and treat the signature as an irreversible, human-gated action.
 6. **Deal desk + discounting.** Discount ladder with approval tiers; anything past threshold or below the venture's price floor → approval gate, logged in a Deal Desk table with an audit trail.
@@ -39,7 +40,7 @@ Everything routes to the offers and motions defined in venture-context. Never ha
 
 ## Output contract — a venture's CRM + sales setup
 1. **Airtable base schema** — tables (Companies/Contacts/Deals/Activities + any support tables), key fields, links, rollups, formulas — build-ready for the Airtable MCP / `airtable:sales-ops`.
-2. **Pipeline** — stages with definitions/exit criteria + default probabilities + the weighted-forecast formula.
+2. **Pipeline(s)** — the archetype's stage template(s) with definitions/exit criteria + default probabilities + the weighted-forecast formula (a marketplace ships two: supply + demand; a goods venture ships the wholesale pipeline and states that DTC revenue lives in the commerce platform, not the CRM).
 3. **Sales process** — the stage-by-stage playbook with the composed skill at each step and paste-ready scripts (drafts).
 4. **Forecast view** — weighted pipeline by period/owner/segment + the sales-metrics set + the CAC handoff to `finance-ops`.
 5. **The operating layer** — lead capture/scoring/routing rules, the outbound cadence, deal-desk/discount rules, and the automation list.

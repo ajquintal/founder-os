@@ -18,5 +18,10 @@ Grade each on: a tops-down block (TAM→SAM→SOM with tagged multipliers), a bo
 **Pass if:** it back-solves the implied bottoms-up (≈3,300+ paying subs sustained 12 mo), tests it against realistic reach and conversion, exposes the load-bearing assumption (reachable buyers / retention), and returns a corrected realistic range — not a yes/no.
 **Fail if:** it accepts the projection uncritically, or rejects it without reconstructing the arithmetic.
 
+## Eval 4 — marketplace (GMV vs net revenue)
+**Input:** "Size the first-year opportunity for a two-sided local-services marketplace that takes ~20% of each booked job."
+**Pass if:** bottoms-up sizes **GMV** (active buyers × jobs × AOV) then applies take-rate to get **net revenue**, reporting both and never conflating them; it sizes the **constrained side** (supply) and lets it cap GMV; the range anchors to bottoms-up; the load-bearing assumption is liquidity or the constrained side's acquisition, with a cheap test.
+**Fail if:** it reports GMV as the venture's revenue, sizes only the demand side, or defaults to an ARPA/subscription build.
+
 ## Grading
-Pass = 3/3 with both directions present and every number tagged. A run that fabricates an unsourced TAM as fact, or reports a single false-precision point estimate instead of a range, fails that case regardless of polish.
+Pass = 4/4 with both directions present, sized in the venture's own money model (GMV vs net revenue kept distinct for a marketplace), and every number tagged. A run that fabricates an unsourced TAM as fact, conflates GMV with revenue, or reports a single false-precision point estimate instead of a range, fails that case regardless of polish.

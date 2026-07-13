@@ -47,7 +47,7 @@ State it in the four currencies: **$ spend · founder-hours · calendar time · 
 
 ## Step 5 — First funded milestone + kill criteria
 
-The first milestone is the **smallest resourced step that produces evidence** — a manual sale, a booked-calls target, a validated conversion number. Not a build. A build-first milestone with no demand test is the architecture-before-revenue tell → NO-GO (unless all four building-ahead-of-demand conditions in `decision-standards.md` hold). Attach **dated kill criteria** (metric + threshold + date) aligned to the venture's own gates, and state the focus cost.
+The first milestone is the **smallest resourced step that produces evidence** — a manual sale, pre-sold units, a hand-matched marketplace transaction (proving liquidity), a booked-calls target, or a validated conversion / repeat number. Not a build. A build-first milestone with no demand test is the architecture-before-revenue tell → NO-GO (unless all four building-ahead-of-demand conditions in `decision-standards.md` hold). Attach **dated kill criteria** (metric + threshold + date) aligned to the venture's own gates, and state the focus cost.
 
 ## Worked example (abridged)
 

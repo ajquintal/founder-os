@@ -8,12 +8,15 @@ Load `PROFILE.md` then the active `venture-context.md` first. Derive channels, t
 ---
 
 ## 1 — Support stack + channels
-Recommend the helpdesk by **stage and volume**, not by what's fashionable:
+Recommend the helpdesk by the venture's **archetype, stage, and volume** — not by what's fashionable, and **subscription/SaaS is one case, not the default.** A goods venture wants an order-integrated helpdesk; a marketplace wants *two* support queues; a services venture wants the scheduler wired in. Don't reach for a SaaS in-app messenger for a business with no app.
 
-| Stage / signal | Recommended helpdesk | Why |
+| Archetype / signal | Recommended helpdesk | Why |
 |---|---|---|
 | Pre-scale / <~30 tickets/wk / B2B-heavy | **Airtable base** (Airtable MCP) or **Front** | A tickets table + views is enough; Front unifies a shared inbox without a full ITSM. Don't over-tool. |
-| Product-led B2C / in-app + self-serve | **Intercom** | In-app messenger, product tours, KB (Articles), and onboarding in one; strongest for activation. |
+| Product-led SaaS / B2C / in-app + self-serve | **Intercom** | In-app messenger, product tours, KB (Articles), and onboarding in one; strongest for activation. |
+| **Goods / e-commerce** (WISMO, returns, damage) | **Gorgias** (or Zendesk + a commerce app) | Ties every ticket to the order + shipment (Shopify/ShipStation), so "where is my order", refunds, damage, and returns resolve against the real order — not a generic SaaS messenger. |
+| **Marketplace / two-sided** | Helpdesk with **two queues — supply + demand** (Zendesk/Front, or the platform's built-in) | Support *both* sides: a provider/seller issue (payout, deactivation, quality/safety) is as urgent as a buyer's, and supply support protects liquidity. |
+| **Services / appointment-based** | **Front / Zendesk** wired to the scheduler (Cal.com / Jobber / Housecall) | Most tickets are booking / reschedule / at-the-property issues; tie the ticket to the job or appointment. |
 | High-volume / multi-team / macros + reporting | **Zendesk** | Mature routing, SLAs, macros, analytics at scale. |
 
 **Channel → tool map** (wire only the channels the venture actually uses):
@@ -40,11 +43,14 @@ Intake normalizes every channel into one ticket shape: `who · account/tier · c
 | **S3 Normal** | Bug with workaround, config/how-to, account change | ≤1 business day | 3–5 business days | Support; KB-first |
 | **S4 Low** | Feature request, cosmetic, general question | ≤2 business days | Backlog / self-serve | KB + feedback register |
 
+**Archetype-specific severity examples** (the definitions above read SaaS-shaped — map them to the venture): **goods** — S1 = a product-safety/injury hazard or a payment/PII breach; S2 = order lost or damaged in transit, wrong item, or WISMO past the promised window; S3 = a return/exchange or address change. **Marketplace** — S1 = a safety incident, a provider no-show on a booked job, or a payout failure; S2 = a dispute or a quality complaint (either side). **Services** — S1 = a missed appointment or property damage; S2 = a reschedule or a quality issue. Safety is never buried inside a generic "S1 misc" — it routes through the product-safety lane below.
+
 **Escalation matrix** — the hard lane. Some requests are never answered by the model; they are packaged with **`customer-support:customer-escalation`** and handed to a human:
 
 | Trigger | Escalate to | Model must NOT |
 |---|---|---|
 | Clinical/medical question, symptom, "is it safe to take X", dosage | Clinician / clinical partner (refer-out) | give medical advice, interpret labs, or state a clinical outcome |
+| **Product safety / injury / defect / recall** (physical goods or on-site service — a burn, an injury, a hazard, illness, property damage) | **Founder + legal + insurer**; report to the regulator (e.g. **CPSC**) where required; preserve the unit/evidence | admit fault or liability, promise a remedy/refund *as an admission*, make a safety claim, or comment publicly |
 | Legal threat, liability, contract dispute, regulator | Founder + legal | admit fault, promise remedy, or make a legal claim |
 | Security/privacy incident, PII exposure | Founder + eng (incident) | expose data, speculate on cause publicly |
 | Churn threat / at-risk logo above $ threshold | Founder (relationship) | discount or commit terms |
@@ -74,6 +80,8 @@ Compose **`customer-support:draft-response`**, constrained to the founder voice 
 ## 5 — Onboarding + activation
 Activation is where support prevents churn cheapest. Define the **activation milestone** = the venture's core value action, reached inside a set window — reuse the `activation rate` definition from `metrics-dashboard` so support and metrics share one number.
 
+The milestone is **archetype-specific**: **subscription/SaaS** = the first core value action in-app; **goods** = first order delivered *and* the first reorder/replenishment (the repeat is the real activation, not the signup); **marketplace** = *both* sides' first successful transaction (a buyer's first booking *and* a provider's first completed job — a single-sided activation is a false positive); **services** = the first job completed to spec. The sequence below is the SaaS shape — swap the steps/channels to the venture (a goods "welcome" is the unboxing + how-to-use + reorder nudge; a marketplace onboards supply and demand on separate tracks).
+
 Design the sequence as `step → channel → trigger`, front-loaded to first value:
 
 | Step | Channel (tool) | Trigger |
@@ -102,6 +110,12 @@ Set the **activation floor → action**: e.g. activation rate <30% → rework th
 **QBR** (per named/cohort account, quarterly): outcomes vs the goal they bought → usage/health → value delivered (metric or $) → roadmap alignment → renewal/expansion ask. Deck via Canva/pptx.
 
 **Renewal timeline:** T-90 health review → **T-60 QBR + renewal intent** → T-30 paper/terms (founder) → close. **Expansion signals:** usage at a seat/tier cap, a new use case, a new stakeholder — route to the fitting up-ladder offer (highest-fit, not highest-price).
+
+**Retention motion by archetype.** The QBR + T-90/T-60/T-30 renewal clock above is the **B2B / contract / annual** case — don't apply it universally:
+- **Subscription / DTC (self-serve, month-to-month):** there is no renewal date. Run a **continuous, trigger-based churn motion** — watch usage/consumption decay, failed-payment (dunning), and pre-cancel signals, and fire a save flow the moment a trigger trips (win-back, pause-instead-of-cancel, reorder reminder), not on a calendar. The health signal is checked continuously, not quarterly.
+- **Goods:** retention = **reorder / replenishment rate**; the churn signal is a missed replenishment window — nudge before it lapses. A subscription-refill model runs dunning + skip/swap, not a QBR.
+- **Marketplace:** retain **both sides**, and **supply retention is usually the binding constraint** — a churned provider/seller removes liquidity for many buyers. Run a health + save motion per side (provider: earnings/utilization decay, deactivation risk; buyer: booking-frequency decay).
+- **Services / B2B contract:** the dated QBR + renewal timeline above applies.
 
 ## 7 — Feedback loop back to product + metrics
 Every ticket carries a **theme tag** (bug / friction / gap / request / pricing). Weekly, roll up the top themes from the Airtable base and route:

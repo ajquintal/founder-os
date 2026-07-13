@@ -21,10 +21,10 @@ Stand up the content system once: the 3–5 pillars, format mix, repurposing pip
 ## Method (full detail + worked example in `references/method.md`)
 1. **Fix inputs:** ICP, the offer-ladder rungs, and the *one* channel the ICP already lives on. One anchor channel — not six. (Guards: too many fronts.)
 2. **Set 3–5 pillars (pulled from `/positioning`):** each answers a specific JTBD or buyer objection, feeds one named offer rung, and carries a proof source (data, case, mechanism) — not a vibe.
-3. **Choose the anchor format:** one long-form asset per week (essay or video). Everything else is derived from it. Capture once.
+3. **Choose the anchor format — one per cycle, by archetype.** One anchor the whole cycle derives from — but *which* format follows the venture, not a default: expertise / considered-purchase (B2B, services, coaching) → a long-form essay or video; visual / consumer / DTC goods → a photo or short-video shoot, a product story, or a demo; local / experiential → the space, the process, or the result on camera. Everything else is derived from it. Capture once.
 4. **Build the repurposing pipeline:** one anchor → atomized derivatives per channel (short posts, email, clips, carousel). Never write net-new per channel.
 5. **Set the weekly cadence:** batch — plan → produce anchor → atomize → schedule (draft) → engage/measure. Name an owner per slot.
-6. **Instrument:** one compounding metric per pillar (list adds, signups, rung conversion) — never likes.
+6. **Instrument:** one compounding metric per pillar — the one that proves it compounds toward revenue, chosen for the venture's model (list adds, first/repeat purchase, lead/freemium signups, bookings, rung conversion) — never likes.
 
 ## Output contract
 - **Pillars table:** pillar · JTBD/objection · offer rung fed · anchor format · proof source · primary metric.

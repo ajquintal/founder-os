@@ -19,13 +19,15 @@ Start from **functions, not titles.** Every venture must *cover* seven functions
 
 | Function | What it owns |
 |---|---|
-| Product / engineering | the thing that's sold gets built, shipped, and kept up |
+| Product / build / delivery | the thing that's sold gets built/made/delivered, shipped, and kept up — **software** (eng), **physical goods** (production, QA, fulfillment), a **service** (the delivery crew), or a **marketplace's supply** (recruit, vet, activate providers/sellers) |
 | GTM / marketing | demand, positioning, content, channels |
 | Sales | pipeline → closed revenue |
 | Finance | model, books, cash, spend control |
 | Operations | the machine runs — rhythm, SOPs, PM, vendors, access |
 | Support / success | post-sale delivery, retention, escalation |
 | Legal / compliance | entity, contracts, the applicable regime |
+
+> **Non-software ventures:** the "build / deliver" function is often the **largest** and the primary org-design subject — a **frontline delivery / production workforce** (providers, drivers, detailers, store/floor staff, makers, warehouse/fulfillment), not an afterthought under "eng." Design its roles, RACI, access, and on/offboarding **first**. For a marketplace this workforce is *supply* (usually 1099 contractors — mind the worker-classification regime, backbone §9); for a store it's floor staff; for a service it's the crew; for goods it's production + fulfillment.
 
 For the venture's **current stage**, assign each function a **coverage**:
 
@@ -72,6 +74,8 @@ Default core processes (tune to the venture); filled example uses generic roles 
 
 Legend: **A** = Accountable (one only) · R = Responsible · C = Consulted · I = Informed · **⛔** = a founder gate (money / commitment / external send) · *Founder is Informed except the decisions the review/close surfaces for him (the NEEDS-TONY items, the sign-off) · **AI runs the pipeline but deploy-to-prod is human-gated per the backbone + guardrails.
 
+**Model-select the process list.** The rows above lean software (deploy-to-prod, incident Sev 1/2). Swap them for the venture's *real* recurring processes and keep the one-Accountable discipline: **goods** — production run / QA, inventory reorder, fulfillment / shipping, returns / RMA, product-safety / recall; **marketplace** — provider vetting / onboarding, dispatch / matching, a quality-or-safety incident, the payout run, deactivation; **services** — scheduling / dispatch, job delivery + QA, an at-property incident; **retail** — store open / close, cash handling / reconciliation, shrink. Each still has exactly one Accountable, and any process hitting a founder gate (spend / commit / external-send) keeps the founder Accountable.
+
 Keep the table in **Airtable**; a visual matrix in **Lucid** if a diagram helps a new hire.
 
 ### 3. Roles + permissions matrix across the tool stack
@@ -100,7 +104,18 @@ This is people/vendor access — **who can touch which tool** — and it **compo
 
 Read the cells as *ceilings*, not entitlements: a contractor gets the **one** base/repo/folder they need and nothing else; the AI service account never holds a write key to money or prod data; Finance touches the money tools and not the code. High-blast-radius cells (Supabase service-role, Stripe live keys, DNS, the vault) stay with the Owner + the single role that must have them, and are the first things checked in the quarterly review and the first things revoked at offboarding.
 
-**Access register schema** (the living source of truth, in Airtable): `Principal · Type (human/service) · Tool · Access level · Scope (repo/base/vault) · MFA on? · Granted (date, by) · Last reviewed · Status (active/revoked)`.
+**Physical & operational access (non-software ventures).** Access governance is **not just SaaS logins** — for a venture with premises, vehicles, inventory, or a frontline workforce, the highest-blast-radius grants are physical. Add these as first-class rows in the register (same least-privilege · record · revoke discipline):
+
+| Resource | Grant discipline |
+|---|---|
+| **Premises** — keys, badges, alarm/gate codes | named holder; codes rotated on any departure; never a shared code that outlives a person |
+| **Vehicles / equipment** | assigned + logged; returned + reassigned at offboarding |
+| **POS / register / cash** | named login; dual-control for cash; void/refund permission scoped |
+| **Inventory / warehouse (WMS)** | scoped to role; count/adjust permission gated |
+| **Provider / driver / store-staff app account** | the operator account *is* their access — deactivate it the moment they leave (the marketplace/services equivalent of revoking a SaaS seat) |
+| **Customer PII / scheduling / dispatch console** | least-privilege; a frontline worker sees only their own jobs/customers |
+
+**Access register schema** (the living source of truth, in Airtable): `Principal · Type (human/service) · Tool / resource (incl. physical — premises key, vehicle, POS, app account) · Access level · Scope (repo/base/vault/site) · MFA on? (n/a for physical) · Granted (date, by) · Last reviewed · Status (active / returned / revoked)`. A key or an app account you can't prove you revoked is an open door exactly like a live API token.
 
 ### 4. Hiring kit — Geoff Smart's "Who" / topgrading
 The order is fixed: **scorecard first, always.** Sourcing or interviewing before the scorecard exists is how you hire a résumé instead of an outcome.
@@ -139,7 +154,7 @@ Score each interview on the scorecard; decide against the outcomes, not on chemi
 - [ ] **Rotate any shared secret they could have seen** (§3 of the backbone) — a departed person + a live shared key = an open door.
 - [ ] Remove from GitHub, Supabase, Stripe, host, Airtable, comms, analytics, payroll/billing, vault, e-sign, DNS.
 - [ ] **Transfer ownership** of anything they solely owned (repos, bases, docs, domains, vendor relationships).
-- [ ] Recover assets (laptop, hardware keys, physical access).
+- [ ] **Recover assets + revoke physical/operational access** — laptop/devices, hardware keys, **premises keys/badges/alarm codes (rotate any shared code), vehicles/equipment, uniforms, POS/register logins, inventory or consignment on hand** — and **deactivate any provider/driver/store-staff app (operator) account**, which *is* their access to jobs and customer data.
 - [ ] Final pay / contractor settlement → `/finance-ops`.
 - [ ] Knowledge transfer — their SOPs are current and reassigned.
 - [ ] **Update the access register and re-audit** to confirm zero residual access.

@@ -28,12 +28,12 @@ One level deep; does not fan out further. Lenses: Gerber E-Myth (systemize so a 
 - Founder pay / draw / distribution policy — ⚠ review: accountant (tax) — [jurisdiction]
 - Runway / cash tracker (collected cash, not projections)
 
-### C. Payments
-- Payment processor account (Stripe) — [approval to open]
-- Products + prices configured (test mode → live)
-- Sales tax / VAT / GST collection + registration where nexus exists — ⚠ review: accountant — [jurisdiction]
-- Refund, cancellation, and dispute policy (published)
-- Payout bank account linked; payout schedule set
+### C. Payments / getting paid (select the path for how the venture takes money — not every venture has a web checkout)
+- Payment path chosen for the channel — **subscription/web** → processor + recurring billing (Stripe/Braintree); **goods retail** → storefront checkout and/or in-person **POS** (Shopify/Square); **marketplace** → split-payment + **seller payouts** rail with seller **KYC/onboarding** (Stripe Connect/Adyen) — ⚠ review: accountant/lawyer (money-transmission + payout terms); **services** → **invoicing / AR** (deposits, milestones, ACH), no product catalog required — [approval to open]
+- Catalog / rates configured as the model needs — products + prices (goods/subscription, test → live) · rate card / SOW (services) · commission / take-rate + payout schedule (marketplace)
+- Sales tax / VAT / GST collection + registration where nexus exists; **marketplace-facilitator** obligations + **1099-K / seller tax reporting** for a marketplace — ⚠ review: accountant — [jurisdiction]
+- Refund, cancellation, and dispute (chargeback) policy (published)
+- Payout bank account linked; payout schedule set (for a marketplace, seller-payout schedule + any held-funds / guarantee reserve)
 - Invoice / receipt templates
 
 ### D. Compliance & Data
@@ -64,7 +64,7 @@ One level deep; does not fan out further. Lenses: Gerber E-Myth (systemize so a 
 ## Sequencing (dependency DAG)
 
 ```
-Entity ─→ Tax ID ─→ Bank account ─→ Payment processor (live) ─→ take money
+Entity ─→ Tax ID ─→ Bank account ─→ Payment path (live: processor / POS / payouts / invoicing) ─→ take money
    └─→ IP assignment                Compliance (privacy/ToS/licenses) ─┘ (blocks public launch)
 Ops (domain / email / secrets) runs in parallel from day one.
 ```

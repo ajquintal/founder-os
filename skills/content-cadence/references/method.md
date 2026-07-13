@@ -13,8 +13,8 @@ A content plan picks themes and pieces once. An engine keeps producing them on s
 3. **Recurring calendar.** Fixed weekly slots by *format* + a monthly *theme* cycle. Size the cadence to what a cheap model can produce and Tony can approve in one ≤15-min review — sustainable beats ambitious.
 4. **Batch workflow.** Produce a whole cycle at once: ideate against the calendar → draft every piece → one Tony approval (one gate, not per post) → schedule/queue to dates. Batching removes the daily decision and protects founder time.
 5. **Repurpose loop.** Each cycle yields one *anchor* (long-form: article, teardown, video). Atomize it into the cycle's derivative slots (posts, clips, quotes, an email). Then recycle top performers on a rotation into an evergreen bank. One input, many outputs, compounding.
-6. **Govern by outcome.** Track the metric that matters — leads, booked calls, revenue — not reach. Winners feed the evergreen bank and the next theme; formats that don't move the metric within their window get killed.
-7. **Guardrail pass.** Everything is a draft until Tony approves; no medical/legal claims; content and prospects sourced within the venture firewall (never LYV for a solely-owned venture). Every piece inherits the venture voice; banned words apply.
+6. **Govern by outcome.** Track the metric that matters for the venture's model — orders/purchases (commerce), leads or booked calls (services/B2B), bookings (local), revenue — not reach. Winners feed the evergreen bank and the next theme; formats that don't move the metric within their window get killed.
+7. **Guardrail pass.** Everything is a draft until Tony approves; only substantiated claims, any regulated claim (health/financial/legal/environmental) routed for professional review per the venture's claims surface (`venture-context` + `engineering-backbone §9`); content and prospects sourced within the venture firewall (never LYV for a solely-owned venture). Every piece inherits the venture voice; banned words apply.
 
 ## Worked example (abridged) — Executive Edge, owned audience
 
@@ -30,4 +30,4 @@ Approval gate: first business day of the month — Tony approves the month in on
 - **Repurpose loop:** anchor = one long-form teardown per month (e.g., "why insights aren't execution") → atomize into ~8–10 LinkedIn posts + 1 email + pull-quotes across the slots → recycle top posts into a 90-day evergreen rotation.
 - **Governing metric:** booked B2B calls (the sprint's success metric), not likes. Any slot producing zero calls by the Aug 3 gate is cut and reallocated.
 
-Guards in force: one channel-set (no sprawl), one approval gate (founder-independent between reviews), one anchor feeding many pieces (compounding), outcome-governed (kill discipline), drafts-only, and clinical voice with no medical claims.
+Guards in force: one channel-set (no sprawl), one approval gate (founder-independent between reviews), one anchor feeding many pieces (compounding), outcome-governed (kill discipline), drafts-only, and clinical voice with only substantiated, review-routed claims (health/financial/legal/environmental per the venture's surface).

@@ -26,7 +26,7 @@ Any asset that would cross one of these stops and escalates to Tony instead.
 
 ## Claims & compliance
 
-- **No medical or legal claims** in customer-facing copy without appropriate review. In regulated categories, treat compliance (e.g., LegitScript-style requirements, licensure, disclaimers) as a hard dependency, not a formality.
+- **No medical, legal, financial, or environmental claims** in customer-facing copy without appropriate review; **financial figures/projections are illustrative, not advice** — flag CPA/professional review before they inform a real decision or reach investors/customers. In regulated categories, treat compliance (e.g., LegitScript-style requirements, licensure, disclaimers) as a hard dependency, not a formality.
 - Never state a clinical or regulatory capability the venture cannot actually deliver.
 
 ## Data & secrets

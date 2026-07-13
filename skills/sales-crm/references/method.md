@@ -22,6 +22,25 @@ The tool spine (name each when you build it):
 
 ---
 
+## 0 — Pick the commercial-motion archetype (do this first)
+
+The pipeline shape — and whether there's a "deal" pipeline at all — is **read from the venture's archetype** (the money model in `venture-context`, the same one `finance-ops` and `metrics-dashboard` key off). **A B2B deal ladder is one archetype, not the default.** Match the money layers:
+
+| Archetype | Commercial motion | CRM / pipeline shape |
+|---|---|---|
+| **Subscription / SaaS / B2B / high-touch** | one team closes deals | **the deal ladder** (§1 template A): one pipeline, weighted-$ forecast, "Won" = contract + first dollar |
+| **Marketplace / platform** | acquire + retain **two sides** | **two pipelines** — a **supply** pipeline (source → vet → activate → producing) and a **demand** side that is mostly a self-serve lifecycle, not deals. Instrument both; the binding constraint is usually supply / liquidity |
+| **Goods (DTC + wholesale)** | most revenue is self-serve checkout | usually **no DTC deal pipeline** — DTC revenue lives in the commerce platform / POS, not the CRM. Run a CRM pipeline only for the **wholesale / retail-account** motion (sample → PO → reorder) |
+| **Services (project / retainer)** | scope + win engagements | **project / retainer pipeline** (lead → scoping → SOW → won → delivery → renewal); "Won" = signed SOW + deposit |
+
+Two rules that hold for every archetype:
+- **Self-serve / on-platform revenue lives *outside* the CRM.** Don't model DTC checkout or on-platform marketplace transactions as CRM "deals." The CRM tracks the *relationship / account* motions (wholesale, partnerships, high-touch sales, supply onboarding); the **commerce platform / marketplace ledger / POS is the system of record** for self-serve revenue, and it feeds `finance-ops` directly, not the weighted deal forecast.
+- **"Won" and the forecast are defined per model** (each template below). The weighted-$ forecast spans only what actually runs through a pipeline — a goods venture may forecast *wholesale* deals while DTC is a `metrics-dashboard` funnel, not a pipeline.
+
+Pick the template(s) in §1; the rest of the method (capture/scoring, deal desk, metrics, automations) applies to whichever pipeline(s) you stand up.
+
+---
+
 ## 1 — CRM setup (Airtable default)
 
 Default to Airtable-as-CRM via the Airtable MCP and the `airtable:sales-ops` skill (compose it; don't re-derive schema shapes). Pick the shape by team size: a solo/small founder motion starts at the **4-table core** and adds tables only as volume demands. Never impose a 7-table CRM on a 3-person motion.
@@ -61,7 +80,9 @@ Default to Airtable-as-CRM via the Airtable MCP and the `airtable:sales-ops` ski
 - **Deal Desk** — discount/term exception requests (see §6).
 
 ### Pipeline: stages, definitions, probabilities
-Stages are gates with **exit criteria**, not a mood ring. Tune names to the venture; keep the discipline. Default B2B ladder:
+Stages are gates with **exit criteria**, not a mood ring. Tune names to the venture; keep the discipline. **Use the stage template for the archetype picked in §0** — a marketplace stands up *two* of these (supply + demand), a goods venture usually only the wholesale one, and DTC / on-platform self-serve revenue is tracked in the commerce platform / `metrics-dashboard`, never as CRM deals.
+
+**A. Subscription / SaaS / B2B / high-touch — the deal ladder** (the default *only* for this archetype):
 
 | Stage | Exit criteria (what must be true to be IN this stage) | Default prob |
 |---|---|---|
@@ -73,6 +94,41 @@ Stages are gates with **exit criteria**, not a mood ring. Tune names to the vent
 | **Negotiation** | Verbal yes / terms + redlines in motion | 80% |
 | **Closed-Won** | Contract executed **and** first dollar collected | 100% |
 | **Closed-Lost** | Dead; `Loss reason` captured | 0% |
+
+**B. Marketplace / platform — two pipelines.** Supply is a recruit-and-activate pipeline; demand is mostly a self-serve lifecycle (track it in `metrics-dashboard` / the platform, and run a *demand* deal pipeline in the CRM only for high-value / enterprise buyer accounts, e.g. a fleet or corporate account). Tag Deals with a `Side` (Supply / Demand) field or keep two Deal views.
+
+*Supply pipeline (recruit + activate providers / sellers):*
+
+| Stage | Exit criteria | Default prob |
+|---|---|---|
+| **Sourced** | ICP-fit provider / seller identified | 5% |
+| **Applied** | Applied / expressed interest | 20% |
+| **Vetted** | Background / insurance / quality checks passed (a hard gate) | 50% |
+| **Activated** | Onboarded; first listing / availability live | 80% |
+| **Producing** | Completed first paid transaction (the real "won") | 100% |
+| **Churned / Inactive** | No activity in N days / offboarded | 0% |
+
+**C. Goods (DTC + wholesale) — wholesale / retail-account pipeline only** (DTC self-serve revenue is *not* a pipeline; it lives in the commerce platform / POS and feeds `finance-ops`):
+
+| Stage | Exit criteria | Default prob |
+|---|---|---|
+| **Prospect** | Target stockist / retailer identified (ICP-fit) | 5% |
+| **Engaged** | Buyer contact established | 15% |
+| **Sampled** | Samples / line-sheet sent; buyer evaluating | 35% |
+| **First PO** | Opening order placed | 70% |
+| **Stocked** | Delivered + on shelf / live | 90% |
+| **Reorder** | Repeat PO placed — the signal that matters (recurring) | 100% |
+
+**D. Services (project / retainer) — engagement pipeline:**
+
+| Stage | Exit criteria | Default prob |
+|---|---|---|
+| **Lead** | Inbound / sourced, ICP-fit | 10% |
+| **Scoping** | Discovery done; problem + scope defined | 30% |
+| **Proposal / SOW** | Written proposal / statement of work + quote sent | 60% |
+| **Negotiation** | Terms / redlines in motion | 80% |
+| **Won** | SOW signed + deposit collected | 100% |
+| **Delivery → renewal** | Engagement delivered; retainer / renewal / expansion tracked | recurring |
 
 ### Weighted forecasting
 - **Weighted pipeline** = Σ `Weighted amount` across open Deals (`Amount × Probability`).
@@ -126,6 +182,8 @@ Assignment via automation (round-robin or rule-based by segment/territory), with
 ---
 
 ## 3 — Sales process, end-to-end
+
+The table below is the **subscription / SaaS / B2B / high-touch** process (archetype A). Other archetypes run their §0/§1 pipeline instead: **marketplace** = a supply-onboarding process (source → vet → activate → producing) plus a self-serve demand lifecycle owned by `metrics-dashboard`, not this table; **goods** = the wholesale account motion (sample → PO → reorder) while DTC checkout is self-serve outside the CRM; **services** = scoping → SOW → delivery → renewal. Keep the discipline (an exit criterion + a composed skill + a draft per stage); swap the stages to the archetype.
 
 Each stage names its exit criterion and the composed skill that produces the finished asset. Every customer-facing artifact is a draft.
 

@@ -21,7 +21,7 @@ Purpose: stand up the whole post-sale machine — support (deflect → resolve �
 1. `founder-profile/PROFILE.md` — voice, guardrails (DRAFTS ONLY, no medical/legal claims, escalate to a human, LYV firewall, customer data stays in-system, secrets never in text).
 2. `ventures/<slug>/venture-context.md` — model, revenue lines, ICP, offer ladder, stage, actual stack, regulatory surface, and the **core value action**.
 
-Reuse the venture's north-star + activation definition from `metrics-dashboard`; route feedback to `product-spec`. Never hard-code an industry or a channel the venture doesn't use.
+Reuse the venture's north-star + activation definition from `metrics-dashboard`; route feedback to `product-spec`. **Read the support shape from the venture's archetype** (subscription/SaaS, goods/e-commerce, marketplace, or services — subscription/SaaS is one case, not the default). Never hard-code an industry or a channel the venture doesn't use.
 
 ## Composes (customer-support pack + OS siblings)
 - `customer-support:ticket-triage` — categorize, assign P1–P4, route, dedupe.
@@ -32,12 +32,12 @@ Reuse the venture's north-star + activation definition from `metrics-dashboard`;
 - `metrics-dashboard` (activation + health inputs) · `product-spec` (feedback → build).
 
 ## Method (full detail + worked example in `references/method.md`)
-1. **Stack + channels.** Recommend the helpdesk (Intercom / Zendesk / Front — or an Airtable base at small scale) and the channel map: email, SMS/voice, chat, in-app. Match the venture's stage and actual tools; don't over-tool a pre-scale venture.
-2. **Triage → route → escalate.** Define severity tiers (S1–S4) with response + resolution **SLAs**, the routing map, and the escalation matrix — including the hard lane: anything clinical/legal/safety/churn-threat escalates to a human/clinician/lawyer, never answered by the model.
+1. **Stack + channels.** Recommend the helpdesk **for the venture's archetype**: Intercom (SaaS/product-led, in-app), **Gorgias** (goods/e-commerce — order-integrated: WISMO / returns / damage), a **two-queue** setup for a marketplace (support both supply + demand), a scheduler-wired Front/Zendesk for services — or an Airtable base / Front at small scale. Match stage and actual tools; don't over-tool a pre-scale venture or reach for an in-app messenger for a business with no app. Then the channel map: email, SMS/voice, chat, in-app.
+2. **Triage → route → escalate.** Define severity tiers (S1–S4) with response + resolution **SLAs**, the routing map, and the escalation matrix — including the hard lane: anything clinical / legal / **product-safety or injury/recall** / churn-threat escalates to the right human (clinician / lawyer / founder+legal+insurer), never answered by the model. Map the S-tier examples to the archetype (goods: damage / WISMO / returns; marketplace: no-show / dispute / payout; services: missed appointment / property damage).
 3. **Knowledge base / self-serve.** Category tree + a reusable article template; deflect the top ticket themes before they become tickets.
 4. **Response drafting in-voice.** Compose `customer-support:draft-response` in the founder voice; deliver as a draft only.
 5. **Onboarding + activation.** The activation milestone (tie to the north-star's activation rate) + a step sequence with the channel and trigger for each, and the activation floor → action.
-6. **Customer success.** Health-score model (usage + breadth + support signal + relationship + commercial) → Green/Yellow/Red plays; QBR structure; renewal timeline; expansion signals; churn-save motion.
+6. **Customer success.** Health-score model (usage + breadth + support signal + relationship + commercial) → Green/Yellow/Red plays; QBR structure; renewal timeline; expansion signals; churn-save motion. The retention motion is **archetype-specific**: the dated QBR + T-90/60/30 renewal is the B2B/contract case; **DTC/subscription runs a continuous, trigger-based churn motion** (dunning, usage decay, reorder nudges — no renewal date); **marketplace retains both sides** (supply retention is usually the binding constraint).
 7. **Feedback loop.** Tag every ticket with a theme; weekly roll-up → `product-spec` (problem input) + a support-signal metric added to the `metrics-dashboard`.
 
 ## Output contract
@@ -52,7 +52,7 @@ A venture's support + success setup, all filled (not blank templates):
 
 ## Rules
 - **DRAFTS ONLY** for anything customer-facing — never auto-send email, SMS, or chat. Deliver as a Gmail/helpdesk draft; the send is the founder's.
-- **No medical or legal claims.** Escalate anything needing a human/clinician/lawyer (clinical questions, safety, legal threats, regulated claims) — refer out; never answer it.
+- **No medical or legal claims.** Escalate anything needing a human/clinician/lawyer — clinical questions; **product-safety / injury / recall** (→ founder + legal + insurer; report to CPSC/regulator where required; no fault admission, no remedy-as-admission, no public comment); legal threats; regulated claims (health / financial / legal / environmental) — refer out; never answer it.
 - Every ticket gets a severity + SLA before a reply is drafted; no reply without triage first.
 - **Customer/patient data stays in its system.** Never export, echo, or paste PII into drafts, logs, or committed files. Secrets never in text.
 - LYV firewall extends to support: never cross-reference LYV contacts/mailboxes with this venture.

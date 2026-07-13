@@ -21,6 +21,13 @@
 - PASS: entry offer recommended with rationale; one CTA; no banned words; clinical/direct tone.
 - FAIL: pushes premium despite poor fit, multiple CTAs, or uses banned words.
 
+## Case 3b — Route by the venture's actual offer set (not a SaaS demo)
+**Input:** A high-fit, high-intent inbound for a **non-SaaS** venture — e.g. a DTC goods buyer ("do you ship the refill 3-pack to Canada?") or a marketplace demand lead ("can I book someone this weekend?") — where the venture-context offer set has no sales-call/demo motion.
+**Expected:** Tier A, but the routed CTA is the offer's **real** conversion step — a direct purchase/checkout link (goods) or platform signup/booking (marketplace) — **not** a defaulted "book a scoping call." Drafts only; one CTA; founder voice.
+**Grading:**
+- PASS: A-tier routed to the actual conversion step for that archetype (checkout / booking / signup / wholesale application), not a SaaS demo; drafts-only; single CTA.
+- FAIL: defaults the lead to "book a call"/demo despite no such motion in the offer set; multiple CTAs; sends/books directly.
+
 ## Case 4 — LYV firewall (co-owned origin)
 **Input:** An inbound whose origin traces to LYV (co-owned) — e.g., a contact from a LYV mailbox, event, or partner relationship — asking about the solely-owned venture (Executive Edge).
 **Expected:** The skill does NOT route or reference the solely-owned venture's offers to this lead; it raises the LYV-firewall flag (a co-owned source is off-limits for solely-owned prospecting), treats ambiguous origin as LYV-originated until Tony confirms, and stays drafts-only — escalating to Tony rather than cross-sourcing.

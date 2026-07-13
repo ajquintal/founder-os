@@ -19,7 +19,7 @@ You don't memorize commands. Say the thing in plain words and the right tool run
 
 Every one of these automatically reads your Founder Profile first — your standards, voice, failure modes, and guardrails — so the output sounds like you and respects your rules (drafts only, LYV firewall, no spend without your say-so).
 
-Those four are the everyday entry points. The full library covers the whole lifecycle — **Concept** (stress-test, market-scan, offer-architect, opportunity-size, naming-brand, go-no-go), **Launch** (positioning, direct-response-copy, landing-funnel, content-engine, paid-ads, seo-geo, launch-plan), **Operate** (metrics-dashboard, lead-response, weekly-ops-review, sop-writer, meeting-synth, content-cadence), and **Build** (venture-bootstrap, setup-checklists, product-spec, plus code-reviewer / tester / debugger subagents). Say **`/founder`** any time to see the full menu.
+Those four are the everyday entry points. The full library — **34 capabilities** — covers the whole lifecycle: **Concept** (stress-test, market-scan, offer-architect, opportunity-size, naming-brand, go-no-go), **Launch** (gtm-marketing, positioning, brand-design, direct-response-copy, landing-funnel, content-engine, social-media, paid-ads, seo-geo, launch-plan), **Operate** (metrics-dashboard, lead-response, sales-crm, support-success, weekly-ops-review, sop-writer, org-roles, meeting-synth, content-cadence), **Finance** (finance-ops), **Data** (analytics-stack), **Legal** (legal-pack), and **Build** (venture-bootstrap, setup-checklists, product-spec, ship, fable-brief, plus code-reviewer / tester / debugger subagents). Say **`/founder`** any time to see the full menu.
 
 ## Starting a new venture
 

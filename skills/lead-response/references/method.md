@@ -18,16 +18,18 @@ Roll up:
 - **Tier C** — poor fit, or fully served by self-serve → self-serve link or polite decline.
 
 ## Step 3 — Route
-| Tier | Motion | CTA |
+Map the tier to the venture's **actual conversion motion** — a SaaS demo/scoping call is one case, not the default. Read the offer set from venture-context and pick the real next step:
+
+| Tier | Motion | CTA (by archetype — use the venture's actual next step) |
 |---|---|---|
-| A | Founder/sales call | booking link for a scoping call |
+| A | The offer's real high-intent step | high-touch/B2B/services → scoping/sales call (booking link); goods/DTC → direct purchase/checkout link; marketplace → platform signup or a booking; wholesale → line-sheet + application |
 | B | Nurture / entry offer | entry-tier offer or sequence enrollment |
 | C | Self-serve / decline | self-serve link or courteous no |
 
-Route to the highest-**fit** offer from the ladder in venture-context.
+Route to the highest-**fit** offer from the ladder in venture-context. Don't default an A-tier goods buyer to "book a call" or a marketplace lead to a sales demo — route to the step that actually converts that offer.
 
 ## Step 4 — Flag risk
-- **Claims review** — the lead asks for an outcome/medical/legal promise → do not assert it; draft around it and flag.
+- **Claims review** — the lead invites a regulated claim (health / financial / legal / environmental) or any outcome promise → do not assert it; draft around it and flag for professional review, honoring the venture's own claims & regulatory constraints.
 - **LYV firewall** — any crossover with LYV → do not route or reference; flag.
 - **Approval** — discount, custom pricing, or spend implied → mark NEEDS approval, don't commit.
 

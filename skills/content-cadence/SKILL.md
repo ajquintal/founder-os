@@ -30,8 +30,8 @@ and repeats the wedge from `/positioning` (or `/market-scan`).
 3. Set the recurring calendar: fixed weekly slots by format + a monthly theme cycle, sustainable on a cheap model.
 4. Define the batch workflow: produce a full cycle in one sitting → one Tony approval → schedule/queue.
 5. Build the repurpose loop: one anchor asset → atomize into many derivatives → recycle winners (evergreen bank).
-6. Govern by the outcome metric (leads/calls/revenue), not reach; kill formats that don't move it.
-7. Guardrail pass: drafts until approved; no medical/legal claims; source within the venture firewall.
+6. Govern by the outcome metric for the venture's model (orders/purchases, leads, booked calls, bookings, revenue), not reach; kill formats that don't move it.
+7. Guardrail pass: drafts until approved; only substantiated claims, any regulated claim (health/financial/legal/environmental) routed for review per the venture's claims surface; source within the venture firewall.
 
 ## Output contract — three concrete artifacts
 ```
@@ -55,7 +55,7 @@ REPURPOSE LOOP
 - Minimum viable channel set. A new channel is a new front — justify it against the ICP or cut it.
 - One anchor in, many pieces out. Never single-use content; every asset is built to atomize and recycle (compound).
 - One approval gate per cycle, not per post. Batch the review; Tony's time is ≤15 min on approvals.
-- Every piece ladders to the wedge and inherits the venture voice; banned words apply; no medical/legal claims.
+- Every piece ladders to the wedge and inherits the venture voice; banned words apply; make only substantiated claims and route any regulated claim (health / financial / legal / environmental) for professional review before publish — honor the venture's own claims surface (`venture-context` + `engineering-backbone §9`), not a fixed medical/legal-only list.
 - Govern by the outcome metric, not reach. Kill formats that don't produce it within their window.
 
 ## Examples & evals

@@ -21,8 +21,8 @@ The get-legal-and-operational skill. Turns "what do I actually need in place to 
 2. Active `ventures/<slug>/venture-context.md` (jurisdiction, offer type — physical/digital/regulated, ownership, regulatory surface, constraints).
 
 ## Method (full detail + worked example in `references/method.md`)
-1. **Read the venture's reality.** Pull jurisdiction, entity status, offer type, ownership, and regulatory surface from the context. Never assume US/Delaware.
-2. **Select applicable groups.** Include only what applies — skip inventory/logistics for a pure-digital venture; add licensing for a regulated one.
+1. **Read the venture's reality.** Pull jurisdiction, entity status, offer type, ownership, **how it takes money (web-app subscription · storefront/POS · marketplace with seller payouts · in-person · invoicing)**, and regulatory surface from the context. Never assume US/Delaware, and **never assume there's a web app or a Stripe checkout** — the payment path follows the channel.
+2. **Select applicable groups + the payment path.** Include only what applies — skip inventory/logistics for a pure-digital venture; add licensing for a regulated one; add marketplace/seller-payout items for a two-sided venture; use invoicing/AR rather than a checkout for a services venture.
 3. **Sequence by dependency.** Entity → tax ID → bank → payments → compliance → ops. Later items block on earlier ones; make that explicit.
 4. **Flag every judgment call.** Anything legal, tax, or licensing-related gets a "needs professional review" flag — draft the question for the professional, never the ruling.
 5. **Assign owners + jurisdiction flags.** Default owner = Founder; flag any item whose rules vary by country/state.
@@ -35,10 +35,11 @@ Plus: a one-line sequencing note (what blocks what) and the 3 items most likely 
 ## Rules
 - **Not legal/tax/financial advice.** Every judgment call carries ⚠ needs professional review with the right professional named. State this disclaimer at the top of the output.
 - Jurisdiction-flag anything that varies (entity type, sales tax/VAT, employment, licensing, privacy law).
+- **Select the payment/setup path from how the venture actually operates and takes money** — web-app subscription, storefront/POS, marketplace with seller payouts, in-person, or invoicing. Never assume a web app or a default processor; a services or local venture may have no online checkout at all.
 - Sequence by dependency; call out the blocking chain so no launch date is promised before it can be met.
 - Secrets/credentials never in text — reference where a credential will live (secret manager / env), never a value.
 - Drafts only: prepare the checklist; no filings, account openings, or spend without Tony's approval. Respect the LYV firewall — keep venture entities/data/relationships siloed.
 
 ## Examples & evals
 - `references/method.md` — the full checklist library per group, jurisdiction variants, the sequencing DAG + worked example.
-- `evals/evals.md` — 3 cases (US digital SaaS, EU/UK physical goods, regulated category).
+- `evals/evals.md` — 4 cases (US digital SaaS, EU/UK physical goods, regulated category, marketplace/services).

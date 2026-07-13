@@ -1,6 +1,6 @@
 # /opportunity-size — Full method & worked example
 
-One level deep; does not fan out further. Lenses: Scale Mechanics (economics-first), David Skok (conversion/ACV), cash discipline (collected over booked).
+One level deep; does not fan out further. Lenses: Scale Mechanics (economics-first), David Skok (conversion/ACV), cash discipline (timing of cash vs. bookings). **Size in the venture's money model — GMV for a marketplace, units×AOV for goods, billings for services, ARR for subscription; never default to an ACV/subscription shape.**
 
 ## Why both directions
 
@@ -16,21 +16,24 @@ Tops-down alone flatters — "1% of a $65B market" is a fantasy, not a plan. Bot
 
 Show the arithmetic and tag every multiplier. SOM is a ceiling, not a forecast.
 
-## Bottoms-up (the trustworthy number)
+## Bottoms-up (the trustworthy number) — pick the archetype's formula
 
-```
-reachable buyers  ×  conversion  ×  price/ACV  ×  billing frequency  =  12-mo revenue
-```
+| Archetype | Bottoms-up build → 12-mo revenue |
+|---|---|
+| Goods / commerce | reachable buyers × conversion × AOV × repeat-orders/yr (cap by inventory-cash capacity) |
+| Services | reachable clients × close rate × engagement value × frequency (cap by delivery / utilization capacity) |
+| Subscription / recurring | new subs × ARPA × months retained in window (+ existing base) |
+| Marketplace | active buyers × orders × AOV = **GMV**, then × take-rate = **net revenue** (size the constrained side; it caps GMV) |
 
-- **Reachable buyers** — from real reach only: owned list size, warm/target-account count, outbound capacity given the founder's time cap. Not a % of the market.
+- **Reachable buyers / clients / suppliers** — from real reach only: owned list size, warm/target-account count, outbound capacity given the founder's time cap. Not a % of the market. **For a marketplace, count BOTH sides — the constrained side (usually supply) sets the ceiling.**
 - **Conversion** — benchmarked or assumed; if assumed, it's a candidate for the load-bearing assumption.
-- **Price/ACV** — held price points from the venture context / `/offer-architect`.
-- **Frequency** — one-time, or recurring × expected months in the window.
-- Sum across segments and ladder rungs, then separate **booked** (contract value) from **collected** (cash landing inside 12 months — deposits, multi-month terms).
+- **Price / AOV / ACV / take-rate** — held price points from the venture context / `/offer-architect`.
+- **Frequency / repeat** — one-time, or recurring/repeat × expected orders or months in the window.
+- Sum across segments and rungs, then place the cash: **booked** (contract/GMV value) vs **collected in-window**. Cash can **lag** booked (deposits, multi-month terms) or **lead** it (goods paid at checkout); an **inventory venture commits working capital to stock ahead of any sale**, so the binding limit is often cash-for-inventory, not demand — cap the range there.
 
 ## Reconcile → a range
 
-Present conservative / base / stretch, anchored to bottoms-up and capped by SOM. If bottoms-up > SOM, a filter is wrong — revisit. If bottoms-up ≪ SOM, the constraint is reach/execution, not market size (that's the usual case and it's fine — say so).
+Present conservative / base / stretch, anchored to bottoms-up and capped by SOM. **Also cap by the venture's real delivery constraint — inventory-cash for goods, utilization/hours for services, the constrained side's supply for a marketplace — whichever binds first.** If bottoms-up > SOM, a filter is wrong — revisit. If bottoms-up ≪ SOM, the constraint is reach / execution / capacity, not market size (that's the usual case and it's fine — say so).
 
 ## Load-bearing assumption
 

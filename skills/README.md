@@ -57,7 +57,7 @@
 ## Legal — protect the machine
 | Skill | What it does |
 |---|---|
-| `legal-pack` | The legal, entity & compliance foundation: entity choice (LLC vs C-corp vs S-corp) by goal + operating agreement/bylaws + cap-table basics; the core contract set as review-flagged draft templates (ToS · privacy · DPA · NDA · MSA · SOW · contractor · employment · referral); IP assignment + the trademark path (flag, never clear); and the compliance regime by industry (GDPR/CCPA · HIPAA · LegitScript · licensure) mapped to concrete requirements — plus the templatable-vs-lawyer split. Composes `setup-checklists` + the `legal:*` pack; cross-refs `docs/engineering-backbone.md §9`. **Not legal advice — flags "attorney review required" at every judgment point; drafts only, never files/signs.** |
+| `legal-pack` | The legal, entity & compliance foundation: entity choice (LLC vs C-corp vs S-corp) by goal + operating agreement/bylaws + cap-table basics; the core contract set as review-flagged draft templates (ToS · privacy · DPA · NDA · MSA · SOW · contractor · employment · referral — plus model-specific goods/retail: lease · supply · sale-of-goods · IP-license when the venture's model requires); IP assignment + the trademark path (flag, never clear); and the compliance regime by industry (GDPR/CCPA · HIPAA · LegitScript · licensure) mapped to concrete requirements — plus the templatable-vs-lawyer split. Composes `setup-checklists` + the `legal:*` pack; cross-refs `docs/engineering-backbone.md §9`. **Not legal advice — flags "attorney review required" at every judgment point; drafts only, never files/signs.** |
 
 ## Build — make the product
 | Skill | What it does |

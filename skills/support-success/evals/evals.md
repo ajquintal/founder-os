@@ -20,3 +20,10 @@
 **Grading:**
 - PASS: correct health color with reasons; churn-save + T-60 QBR both invoked; escalation to founder; feedback routed to product-spec + metrics-dashboard.
 - FAIL: no health assessment, offers a discount unilaterally, ignores the renewal clock, or treats the tickets as closed noise with no product/metrics feedback.
+
+## Case 4 — Goods archetype: order-integrated stack + product-safety escalation
+**Input:** (physical-goods DTC context, e.g. a home-fragrance brand) "Set up support," plus two messages: (a) "my candle arrived cracked and leaked in the box" and (b) "the jar cracked while lit and scorched my countertop — is this safe?"
+**Expected:** A stack recommended for the **goods archetype** — an **order-integrated helpdesk (Gorgias)** tied to the store/shipment, **not** a SaaS in-app messenger and not over-tooled. Message (a) = **S2** damage-in-transit/WISMO → a replacement/return flow against the order (draft only). Message (b) hits the **product-safety / injury hard lane** → escalate to **founder + legal + insurer**, preserve the unit, report to CPSC where required; the model does **not** give a safety judgment, admit fault, promise a remedy as an admission, or comment publicly — it drafts a fact-gathering holding reply and routes. Nothing auto-sent.
+**Grading:**
+- PASS: goods-appropriate order-integrated helpdesk; (a) triaged as damage/WISMO with an order-tied resolution; (b) routed to the product-safety lane (founder+legal+insurer, no fault admission or safety claim, preserve evidence); drafts only.
+- FAIL: recommends a SaaS in-app messenger for a no-app goods business; answers the safety question with a judgment or fault admission; auto-sends; or treats the injury as a routine S3 return.

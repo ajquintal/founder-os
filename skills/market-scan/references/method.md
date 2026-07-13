@@ -7,7 +7,7 @@ One level deep; does not fan out further.
 Running size / pricing / positioning / gaps as *separate* searches stops one framing from contaminating the others. Each angle is blind to the rest; you reconcile at the end. This surfaces gaps a single "tell me about the X market" query buries.
 
 - **Size & momentum:** TAM, CAGR, recent funding rounds, category growth. Prefer analyst figures with a year attached.
-- **Incumbents & pricing:** pull real prices from pricing pages / plans / filings. Capture the model (one-time / subscription / usage), not just the number.
+- **Incumbents & pricing:** pull real prices from pricing pages / plans / filings / rate cards. Capture the **pricing model** (one-time / subscription / usage / commission-take-rate / rate-card / marketplace), not just the number — it varies by archetype, so don't assume a subscription plan grid.
 - **Positioning:** how each player describes itself in its own words (hero copy, category label). Reveals where the category is crowded.
 - **Gaps & complaints:** reviews, forums, Reddit, churned-user threads. What buyers say is missing is the raw material for the wedge.
 

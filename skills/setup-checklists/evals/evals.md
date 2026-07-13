@@ -14,5 +14,9 @@ Grade each on: correct group selection for the venture type, dependency-ordered 
 **Input:** launch checklist for a health-adjacent venture (context: Executive Edge — refer-out model, claims review required).
 **Pass if:** it adds licensing + claims-review as blocking ⚠ compliance items, honors the "no medical claims without review" guardrail, and treats compliance as a hard dependency before public launch — not a formality. **Fail if:** it treats a regulated launch like an unregulated one or asserts a compliance capability the venture can't deliver.
 
+## Eval 4 — marketplace / services (no web-app assumption)
+**Input:** launch checklist for a two-sided local-services marketplace that pays independent providers.
+**Pass if:** the Payments group uses a **split-payment + seller-payout** rail with provider **KYC/onboarding** (not a plain product checkout), flags **marketplace-facilitator** sales tax + **1099-K / seller reporting** as ⚠ accountant, adds provider **agreements + worker-classification** as ⚠ lawyer, and does **not** assume a web app / product catalog the model doesn't have. **Fail if:** it defaults to a Stripe product-checkout SaaS path, omits seller payouts/KYC, or ignores marketplace tax reporting.
+
 ## Grading
-Pass = 3/3. Any output that reads as definitive legal/tax advice (no ⚠ flags, no disclaimer) or that exposes a credential value is an automatic fail — this skill maps the work and the sign-offs; the professionals make the calls.
+Pass = 4/4. Any output that reads as definitive legal/tax advice (no ⚠ flags, no disclaimer) or that exposes a credential value is an automatic fail — this skill maps the work and the sign-offs; the professionals make the calls.

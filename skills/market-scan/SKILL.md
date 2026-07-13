@@ -20,7 +20,7 @@ A sized, sourced view of a category and its players, ending in the wedge. Feeds 
 1. Frame the category and the buyer from the venture context (or the idea).
 2. **Multi-angle web research fan-out** — run these as independent searches, blind to each other:
    - Market size + growth (TAM, CAGR, recent capital invested)
-   - Incumbents + their pricing (pricing pages, plans, filings)
+   - Incumbents + their pricing (pricing pages, plans/rate cards, filings) — capture the pricing *model*, not just the number
    - Positioning + messaging (how each describes itself)
    - Gaps + complaints (reviews, forums — what buyers say is missing)
 3. Dedupe + reconcile; keep only sourced facts.

@@ -20,7 +20,7 @@ Lead with the pillar built on the venture's **wedge** (from `/market-scan`); it'
 
 ## Anchor format + mix
 
-Pick one anchor per cycle: a long-form essay (~1,000–1,500 words) or a video (~5–8 min). Rotate pillars across cycles. The anchor is the only net-new writing; derivatives are extraction, not invention.
+Pick one anchor per cycle — its *format* follows the archetype, not a default. Expertise / considered-purchase (B2B, services, coaching): a long-form essay (~1,000–1,500 words) or a video (~5–8 min). Visual / consumer / DTC goods: a photo or short-video shoot, a product story, or a demo. Local / experiential: the space, the process, or the result on camera. Rotate pillars across cycles. The anchor is the only net-new capture; derivatives are extraction, not invention.
 
 ## Repurposing pipeline (1 → N)
 
@@ -49,7 +49,7 @@ Two hours of founder time max (Mon brief + Fri engage); the rest runs on cheaper
 
 ## Metric per pillar
 
-Pick the one number that proves the pillar compounds toward revenue: list adds, freemium/lead signups, or rung-to-rung conversion. Likes and impressions are diagnostics at best — never the scorecard.
+Pick the one number that proves the pillar compounds toward revenue — chosen for the venture's model: list adds, first/repeat purchase (commerce), lead/freemium signups (services/SaaS), bookings (local), or rung-to-rung conversion. Likes and impressions are diagnostics at best — never the scorecard.
 
 ## Worked example (abridged) — Executive Edge OS
 

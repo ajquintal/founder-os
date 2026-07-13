@@ -44,7 +44,13 @@ A fired trap is not an automatic KILL — but it must be named, and the verdict 
 
 ## Step 6 — Economics gate
 
-At minimum, sanity-check: affordable CPA, target AOV, break-even, first-year LTV (see `operating-playbooks.md`). Three outcomes:
+Sanity-check the economics **in the venture's own money model** — don't force an AOV/LTV frame onto every idea (see `operating-playbooks.md` and `/offer-architect`):
+- **Goods / commerce** — contribution margin after COGS + fulfillment, affordable CPA, repeat rate, ad break-even ROAS / MER.
+- **Services** — billable rate × utilization × realization; margin per engagement.
+- **Marketplace** — GMV × take-rate, both-sided CAC, and liquidity (a take-rate with no liquidity is not a business).
+- **Subscription / recurring** — LTV, CAC-payback, NRR / churn.
+
+Three outcomes:
 - **plausible** — the math closes on conservative assumptions.
 - **unproven** — the math *could* close but rests on an untested number → that number becomes a make-or-break assumption.
 - **doesn't close** — the math fails even generously → KILL or REFINE the model.
