@@ -1,23 +1,39 @@
 # /gtm-marketing — Full method & worked example
 
-One level deep; composes the Launch skills but does not fan out further into them (it cites or runs them). Lenses: **Dunford** (positioning → message-market fit; don't re-derive it), **Christensen JTBD** (the message per segment = the progress the buyer hires the product for), **Hormozi** (offer economics set the affordable CAC), **Brunson** (funnel + launch sequencing), **Skok** (CAC/LTV, payback, channel economics + attribution), **Gerber/E-Myth** (marketing as a repeatable calendar/system, not founder heroics), **Decision Standards** (the demand gate, $0-until-proven, dated kills, one primary bet).
+One level deep; composes the Launch skills but does not fan out further into them (it cites or runs them). Lenses: **Dunford** (positioning → message-market fit; don't re-derive it), **Christensen JTBD** (the message per segment = the progress the buyer hires the product for), **Hormozi** (offer economics set the affordable CAC), **Brunson** (funnel + launch sequencing), **Skok** (CAC/LTV, payback, channel economics + attribution), **Gerber/E-Myth** (marketing as a repeatable calendar/system, not founder heroics), **Decision Standards** (the demand gate, $0-until-proven, dated kills, one primary bet), **Marketplace liquidity / cold-start** (Andrew Chen — for a two-sided venture the binding constraint is *liquidity*, not demand; seed the scarce side first).
 
 The job: turn a pile of individually-correct Launch assets into **one motion with a budget behind it**. The failure this prevents is a founder with good positioning, a good funnel, and good content who still can't answer "which channel, what spend, what CAC, what next" — and who overbuilds the machine instead of booking the call.
 
 ---
 
-## Step 1 — Set the motion
-A "motion" is the dominant way the venture converts a stranger into revenue. Pick the **primary** and name the **secondary** — most ventures are one plus a supporting flywheel. Decide on ACV × sales-complexity × time-to-value:
+## Step 1 — Set the motion (archetype-first)
+A "motion" is the dominant way the venture converts a stranger into revenue. **Before choosing one, read the venture's archetype + its binding GTM constraint from `venture-context`** — the same money model `finance-ops`/`metrics-dashboard` read. SaaS-style demand generation is ONE archetype's constraint, not the default. The archetype decides *what you must manufacture* (demand · distribution · trust · liquidity); the sub-matrix then decides *how*. Pick the **primary** and name the **secondary** — most ventures are one plus a supporting flywheel.
 
-**Motion decision matrix**
-| If… | Primary motion | Looks like |
+**Archetype → binding constraint → motion → primary GTM metric**
+| Archetype (money model) | Binding GTM constraint | Primary motion(s) | Primary GTM metric |
+|---|---|---|---|
+| **Subscription / SaaS** | manufacture **demand** | demand-side — sales-led / product-led / community-led (pick on the sub-matrix) | qualified pipeline / activations |
+| **Goods — DTC / wholesale / retail** | **demand + distribution** | DTC: performance + content/creator-led; wholesale/retail: buyer & account outbound + trade-show/broker/retail-channel | orders · contribution margin after COGS+fulfillment · repeat/reorder rate |
+| **Services — agency / consulting / local** | **trust & reputation** | referral + reputation (reviews/portfolio/case studies) + warm/targeted outbound; local presence where geographic | booked qualified work · referral/repeat rate |
+| **Marketplace / two-sided** | **LIQUIDITY** (not demand alone) | **supply-side acquisition + a cold-start plan — seed the constrained side first**; demand-gen follows liquidity | **liquidity — fill rate / time-to-match / utilization** |
+
+**Demand-side sub-matrix** — use when the job is to manufacture demand (SaaS; the demand side of a marketplace *once it's liquid*; DTC; services outbound). Decide on ACV × sales-complexity × time-to-value:
+| If… | Motion | Looks like |
 |---|---|---|
 | High ACV (≈$15k+), considered/committee buy, founder's warm network is the wedge | **Sales-led** | Warm outbound → booked calls → proposals/contracts |
 | Free/low-friction entry, fast time-to-value, self-serve checkout, low ACV/high volume | **Product-led (PLG)** | Funnel → activation → in-product expansion |
 | Identity/trust-driven category, word-of-mouth compounds, the audience congregates | **Community-led** | Owned audience → content → referrals → partnerships |
 | Reach the buyer through operators/resellers who already own the relationship | **Channel/partner-led** | Recruit + enable partners; rev-share |
 
-**The default posture (Tony's profile):** whatever the eventual motion, start **warm-outbound + owned-audience, founder-led, at $0** to prove demand (operating-playbooks GTM #4: sell before you build; highest-EV channel first). Layer product-led/paid **only after** demand is evidenced. State the **phase gate** explicitly: *prove <X> before scaling <Y>.* A plan that opens with a paid budget on an unproven offer is the "architecture before revenue" tell — hold spend and say so.
+**Marketplace cold-start playbook** (when the archetype is two-sided). A marketplace with no liquidity is not a demand problem — pouring demand onto an empty marketplace just yields failed matches and churns both sides. Manufacture liquidity first:
+- **Find the constrained side.** One side is scarce (usually supply) and is the binding constraint; acquire *it* first — the abundant side follows liquidity.
+- **Single-player mode.** Give the first side stand-alone value before the other exists (a tool that's useful with zero counterparties), so early users stay while density builds.
+- **Concierge / manual matching.** Hand-match the two sides yourself before automating — do things that don't scale to guarantee the first fills and learn the match.
+- **Geographic / vertical density.** Win one city/vertical to real liquidity before expanding; a dense single market beats a thin national one — density, not reach, is the unit of expansion.
+- **Seed / subsidize the scarce side.** Recruit and onboard the constrained side deliberately; founder-led recruiting is $0, but any *cash* subsidy is spend — $0 until liquidity is proven, then only on Tony's approval.
+- **Measure liquidity, not volume.** Fill rate / time-to-match / utilization / % of listings that transact is the primary GTM metric, handed to `/metrics-dashboard` (Step 9) to compose with its marketplace money strip (GMV, take-rate, both-sided retention).
+
+**The default posture (Tony's profile):** whatever the eventual motion, start **warm-outbound + owned-audience, founder-led, at $0** to prove the binding constraint — demand for most archetypes, **liquidity on the constrained side for a marketplace** (operating-playbooks GTM #4: sell/seed before you build; highest-EV channel first). Layer paid **only after** the constraint is evidenced. State the **phase gate** explicitly: *prove <the constraint> before scaling <Y>.* A plan that opens with a paid budget on an unproven offer — or that funds demand before a marketplace is liquid — is the "architecture before revenue" tell: hold spend and say so.
 
 ## Step 2 — Message-market fit per segment
 Pull the segments and pillars from `/positioning` (run it first if absent — do not invent pillars). For each segment write one row: **who → the one message (a pillar, in their words) → the proof → the single channel they already live on.** One message per segment, one anchor channel per segment. If two segments need opposite messages on the same channel, they are two motions — sequence them, don't blur them.
@@ -29,6 +45,7 @@ Assemble from the default set below; keep only what serves the motion. Each chan
 | Channel | Typical role | Owning skill | Default phase |
 |---|---|---|---|
 | Warm/direct outbound (founder network, LinkedIn, email) | acquire (sales-led) | this skill + `/lead-response` | prove (first) |
+| **Supply-side acquisition** (marketplace: recruit the constrained side — outbound, supply referrals / "refer a pro", vertical/local partnerships, ops-led onboarding) | acquire **supply** | this skill (Step 1 cold-start) + `/lead-response` | prove (first, two-sided) |
 | Owned audience / organic content | acquire + nurture | `/content-engine` → `/content-cadence` | prove |
 | Lifecycle email + SMS (owned list) | nurture + convert | this skill (step 5) + `marketing:email-sequence` | prove → scale |
 | Referral / affiliate / channel partners | acquire | this skill (step 6) | prove → scale |
@@ -36,10 +53,13 @@ Assemble from the default set below; keep only what serves the motion. Each chan
 | Paid (Meta/Google/LinkedIn) | acquire (scale) | `/paid-ads` | **scale only, post-proof** |
 | PR / launch platforms (Product Hunt, press) | awareness + credibility | this skill (step 7) + `/launch-plan` | launch moment |
 
+**Two-sided ventures:** the table above is the *demand-side* plan — build a parallel **supply-side** plan for the constrained side (the supply-acquisition row), and make *it* the anchor of the prove phase. Demand channels stay throttled until there's enough supply to fill them: liquidity, not reach, gates the ramp.
+
 ## Step 4 — Budget + CAC/ROI allocation
 Baseline is **$0**. Then anchor everything to the economics from `/offer-architect`:
 - **Max CAC** = affordable acquisition cost given margin and the target payback window (Skok). Compute it once; it is the discipline anchor for every paid decision.
 - Per channel, fill: stage · budget (0 → $X once proven) · expected CAC · payback/ROI · scale rule · **numeric kill threshold**.
+- **Two-sided ventures:** compute CAC for **each side** (cost to acquire supply *and* demand); the **constrained side's CAC is the gating economic**, justified by the take-rate a *filled match* earns across both sides — not one side's LTV alone. Any subsidy to the scarce side is spend: $0 until liquidity is proven, then within the approved cap.
 - Warm/owned channels cost founder+AI time, ~$0 cash → they run first and their ROI is effectively unbounded; that is *why* they lead.
 - Once demand is proven, allocate roughly **70/20/10** — 70% to the proven channel, 20% to a promising one, 10% experimental — reassessed at the weekly rhythm. Never scale an unproven angle; a losing channel dies at its cap.
 
@@ -68,7 +88,7 @@ Make marketing a system, not heroics (Gerber). Two artifacts:
 ## Step 9 — Attribution + marketing KPI tree
 **Attribution (don't overbuild — complexity-bias guard):** start with self-reported attribution ("how did you hear about us" on the signup/booked-call form) + UTM → GA4 last-touch (+ product analytics like PostHog where it exists). Move to multi-touch **only** when volume makes last-touch lie. 
 
-**Marketing KPI sub-tree:** build the acquisition branch that ladders *into* the venture north-star — never a parallel vanity scoreboard. The marketing north-star is usually **qualified pipeline created / week** ($ and/or booked calls). Inputs: touches→reply rate, reply→booked-call rate, signups/wk, signup→paid conversion (leading); CAC by channel, blended CAC payback (lagging). **Hand this to `/metrics-dashboard`**, which owns the venture north-star: this sub-tree plugs into its "new activated customers/wk" node and its money strip (pipeline $, CAC payback). One tree, two skills, no duplication.
+**Marketing KPI sub-tree:** build the acquisition branch that ladders *into* the venture north-star — never a parallel vanity scoreboard. The marketing north-star is usually **qualified pipeline created / week** ($ and/or booked calls) — **but the archetype sets it**: for a **marketplace it is a liquidity metric** (fill rate / time-to-match / utilization), tracked per side (supply added/wk · demand added/wk) *and* the fill between them; goods → orders × AOV × repeat; services → booked qualified work. It ladders into `/metrics-dashboard`'s archetype money strip (marketplace: **GMV × take-rate**, both-sided retention), never a single-sided vanity number. Inputs: touches→reply rate, reply→booked-call rate, signups/wk, signup→paid conversion (leading); CAC by channel, blended CAC payback (lagging). **Hand this to `/metrics-dashboard`**, which owns the venture north-star: this sub-tree plugs into its "new activated customers/wk" node and its money strip (pipeline $, CAC payback). One tree, two skills, no duplication.
 
 ---
 
@@ -134,8 +154,13 @@ LYV firewall: none sourced from LYV.
 ## Cross-venture agnosticism check — Ethos Hospitality (non-wellness)
 Runs clean with no clinical/SaaS leakage: **motion** = demand/experience-led + local (not PLG — you don't "free-trial" a restaurant); **channels** = local partnerships (hotels, concierges), events/private hire, reservation platforms (Resy-class), an owned loyalty list, local press/PR, referrals; **budget/CAC** = cost per guest acquired, payback measured in covers/repeat visits — **not** a subscription CAC and **not** the 10×-AOV funnel heuristic; **lifecycle** = reservation reminders + loyalty (still SendGrid/Twilio), no medical claims (N/A here) but food-safety/liquor compliance respected; **KPI tree** feeds the venture's contribution-margin north-star, not WAPA. Confirms the method reasons from the active context, not from Executive Edge.
 
+## Cross-venture agnosticism check — a two-sided marketplace (non-SaaS)
+Runs clean with no demand-gen-only leakage. **Archetype:** marketplace; **binding constraint = liquidity** (not demand). **Motion:** supply-side acquisition + cold-start — find the scarce side and recruit it founder-led, concierge-match the first deals, win one city/vertical to density before expanding — *not* a demand funnel. **Channels:** a supply-side plan (recruit the constrained side, supply referrals / "refer a pro", local/vertical partnerships that aggregate supply) runs *alongside and ahead of* the demand plan. **Budget/CAC:** CAC per side, the constrained side gating; any subsidy is gated spend ($0 until liquidity is proven). **Primary metric:** fill rate / time-to-match / utilization, laddering into the venture's **GMV × take-rate** money strip — never a lone pipeline number. Confirms the motion is chosen from the archetype: a marketplace's binding constraint (liquidity) drives the plan, and SaaS demand-gen is just one archetype's case.
+
 ## Anti-patterns (flag these)
 - A paid budget on an unproven offer (violates $0-until-proven; the architecture-before-revenue tell).
+- Treating a two-sided marketplace as a one-sided demand problem — running demand-gen onto an illiquid marketplace so matches fail and both sides churn (the binding constraint is **liquidity**; seed the scarce side first).
+- Defaulting the motion/metric to SaaS demand-gen without reading the archetype (goods, services, and marketplace each bind on a different constraint).
 - Re-authoring positioning, pillars, or economics instead of pulling them from the owning skill (duplication → message drift).
 - Six channels lit at once instead of one anchor + highest-EV-first (too-many-fronts).
 - Overbuilding multi-touch attribution or the full lifecycle/PR stack before volume/demand justifies it (complexity bias; delays the call that actually closes).

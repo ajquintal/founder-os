@@ -59,9 +59,21 @@ verified + tests). WS-A and WS-B are the critical path; C–I run in parallel on
 
 ---
 
-## The phase model (sequencing)
+## The phase model (sequencing) — archetype-conditional
 
-Mirror the `72H_LAUNCH_RUNBOOK` and `/ship` ordering. Phases gate on dependency, then on path-to-first-dollar.
+Mirror the `72H_LAUNCH_RUNBOOK` and `/ship` ordering. Phases gate on dependency, then on path-to-first-dollar. **Read the
+archetype from the venture context and pick the launch order — never default to the SaaS one.** Whichever path applies,
+one ordering rule is absolute:
+
+> **Compliance clears before commerce.** Compliance / legal / safety / licensing / insurance / worker-classification are
+> HARD PREREQUISITE gates that MUST clear *before* any real customer transaction **and before** any liquidity / growth /
+> traction gate. **No real paid transaction before the venture is legally cleared to transact; a growth/liquidity gate can
+> never precede the compliance/insurance/licensing gate.** You cannot run real paid jobs on real customers to "prove
+> liquidity" while the venture is not yet cleared to transact — and for non-software ventures "test mode" is a
+> payment-plumbing dry-run, never real paid customer work.
+
+**Custom-software path** (the SaaS shape — ONE archetype, not the universal order): `deploy → test-mode payments →
+payments go-live`.
 
 - **Phase 0 — Foundation** *(single-threaded; unblocks everything)*: clone/brand `starters/saas`; apply `/brand-design`
   tokens; `profiles` + typed roles + RLS; auth; CORS lock; secret-guard + branch protection; Sentry. **DoD:** app boots,
@@ -70,14 +82,32 @@ Mirror the `72H_LAUNCH_RUNBOOK` and `/ship` ordering. Phases gate on dependency,
   test); the analytics event taxonomy (WS-C); the CRM base (WS-D). **DoD:** the core value action works end-to-end in a
   preview deploy, instrumented.
 - **Phase 2 — Payment & launch surfaces** *(gated)*: Stripe billing + webhook + entitlement (WS-A/E); landing/funnel +
-  tracking (WS-F); **deploy gate → test-mode payments → payments go-live gate**. **DoD:** a real test-mode transaction
-  grants the entitlement on the live URL.
+  tracking (WS-F); **compliance/regime sign-off (backbone §9) → deploy gate → test-mode payments → payments go-live
+  gate**. **DoD:** a real test-mode transaction grants the entitlement on the live URL (test-mode is payment plumbing — no
+  real customer is charged and no real service is rendered until go-live).
 - **Phase 3 — Operate** *(parallel, post-launch)*: finance close wiring (WS-E); support stack + KB (WS-G); legal surfaces
   + compliance sign-off (WS-H); access register + on/offboarding (WS-I); board/KPI reporting. **DoD:** each function is
   live, verified, and on its tool.
 
-Draw the dependency graph explicitly (Phase 0 → everything; payment slice → core object; go-live → deploy + compliance
-sign-off), name what runs in parallel, and mark the **critical path to first dollar**.
+**Services / marketplace / goods path** (physical or human-delivered work): the launch order is compliance-first —
+**legal/insurance/licensing clearance → operational readiness → FIRST real transaction → scale**.
+
+- **Phase 0 — Foundation**: the starter/security/tooling foundation *plus* the operational surface the archetype needs
+  (booking/dispatch, storefront, ops base). **DoD:** the surface boots; roles/RLS clean.
+- **Phase 1 — Clearance & operational readiness** *(HARD PREREQUISITE — blocks all commerce)*: the minimum-bar-to-transact
+  gate — entity, insurance/COI, licensing/permits, worker-classification (1099-vs-employee / FLSA / state ABC), category
+  compliance (backbone §9), payout/reserve rails. Payment plumbing may be wired in test mode; **no real paid job runs.**
+  **DoD:** the venture is legally cleared to transact; the compliance gate is human-signed.
+- **Phase 2 — First real transaction** *(gated ON Phase 1 clearing)*: the first real paid job/order runs on a real
+  customer, on live rails, paid out and reconciled. **DoD:** one real transaction completes with the guarantee/reserve in
+  place.
+- **Phase 3 — Scale** *(post-clearance)*: liquidity / growth / traction gates (e.g. "≥N matched paid jobs"), supply +
+  demand acquisition, support, finance close, ongoing compliance. **These liquidity/growth gates sit after Phase 1–2,
+  never before.** **DoD:** the scale metric is hit on cleared, real volume.
+
+Draw the dependency graph explicitly (Phase 0 → everything; the compliance/clearance gate → the first real transaction →
+any liquidity/growth gate; for the SaaS path, payment slice → core object, go-live → deploy + compliance sign-off), name
+what runs in parallel, and mark the **critical path to first dollar**.
 
 ---
 
@@ -298,4 +328,7 @@ labor law (not HIPAA/LegitScript), **WS-I** on POS/reservations tool access (not
 template is unchanged — a "config-PR: stand up Toast POS + Resy + the inventory tables, with acceptance criteria and
 the access grants" is authored exactly like a code PR. The completeness protocol still forces every domain to a
 disposition; the coverage matrix still proves nothing is dropped. Nothing clinical/SaaS leaks in — the industry is
-read from the venture context, never hard-coded.
+read from the venture context, never hard-coded. And Ethos launches on the **services path, not the SaaS one**:
+liquor-license + health-code + labor-law clearance and insurance are the HARD PREREQUISITE gate — Ethos cannot seat a
+paying guest (its first real transaction) before that gate clears, no "test mode" substitutes for a real paid cover, and
+a covers/turns liquidity gate is sequenced *after* clearance, never before.

@@ -1,6 +1,6 @@
 # /analytics-stack — Full method, stack map & worked example
 
-One level deep; does not fan out further. Lenses: instrument the **core value action** first (economics before build applies to measurement too — don't instrument what can't change a decision), compose `/metrics-dashboard` for the KPI framework rather than re-deriving it, and keep every event consent-clean and PII-minimal by construction (governance is designed in, not bolted on).
+One level deep; does not fan out further. Lenses: **read the venture's archetype first** (subscription/SaaS is one archetype, not the default — it sets the funnel shape and the money strip, both made archetype-conditional below), instrument the **core value action** first (economics before build applies to measurement too — don't instrument what can't change a decision), compose `/metrics-dashboard` for the KPI framework rather than re-deriving it, and keep every event consent-clean and PII-minimal by construction (governance is designed in, not bolted on).
 
 ## Principle
 
@@ -9,6 +9,21 @@ A measurement stack is an operating instrument, not a surveillance apparatus. Tw
 - **Governance is a design input, not a cleanup.** Consent-gating, PII minimization, and retention are decided *before* the first event fires, because they constrain the schema and the vendor choice — exactly as compliance-by-design works in `docs/engineering-backbone.md §9`.
 
 This skill produces finished, review-ready specs and marks the exact points that need Tony's approval or a compliance sign-off. It never fires an event, wires an SDK, changes a config, or launches a live experiment.
+
+---
+
+## First, read the archetype — it sets the funnel and the money strip
+
+Before mapping a single event, read the venture's **archetype** from the venture context (Load-first #2). It decides the shape of part 2's funnel and part 3's money strip. **Subscription/SaaS is one archetype, not the default** — never force a goods, services, or two-sided marketplace venture into a single-sided AARRR funnel + MRR strip. A venture can blend archetypes; apply each row where it fits.
+
+| Archetype | Funnel spine (part 2) | Money + health strip (part 3, lagging) |
+|---|---|---|
+| **Subscription / SaaS** | AARRR: acquisition → activation → retention → revenue → referral | MRR, NRR, churn, CAC payback |
+| **Goods** (DTC / commerce) | acquisition → purchase → repeat/reorder | AOV, contribution margin (after COGS + fulfillment), repeat rate, MER (blended CAC) |
+| **Services** (agency / studio) | lead → qualified → proposal → delivery | utilization, realization, revenue per head |
+| **Marketplace / platform** | **two-sided:** supply acquisition + activation ∥ demand acquisition + activation → match / first transaction → liquidity | GMV, take rate, both-sided retention, liquidity / time-to-match |
+
+For a **marketplace**, one funnel-stage column can't express two sides: every event also carries a **side (supply / demand / cross-side)**, and supply-side acquisition/activation plus the liquidity events (match, time-to-match, fill rate) are first-class — not afterthoughts bolted onto a demand funnel. The money-strip **definitions** are owned by `finance-ops` and must match `/metrics-dashboard` (all three read the same archetype from the venture context); this skill instruments them, it never redefines or defaults them.
 
 ---
 
@@ -42,12 +57,12 @@ The tracking plan is the **single source of truth** — a versioned table (Airta
 - **Properties** are snake_case, **typed**, and **bounded** — enums/bands, not free text or raw sensitive numbers (`contract_value_band: "30-40k"`, never the exact figure; `panel_type`, never the biomarker value).
 - **Super-properties** (set once, attached to every event): `plan_tier`, `account_type` (b2c/b2b), `signup_cohort`. **Identify** only post-consent + post-auth, keyed to the app **user_id (UUID)** — never email. Pre-auth events use an anonymous id, stitched on identify.
 
-**The spec table shape** (one row per event):
+**The spec table shape** (one row per event; a **marketplace** adds a **Side** column — supply / demand / cross-side):
 
 | Event | Trigger | Key properties | Funnel stage | Ladder rung | Consent | PII |
 |---|---|---|---|---|---|---|
 
-- **Funnel stage** ∈ {acquisition, activation, retention, revenue, referral} — the pirate-metric spine, tuned to the venture. Map every event to exactly one.
+- **Funnel stage** — the spine **for the venture's archetype** (see "First, read the archetype"): subscription/SaaS = AARRR {acquisition, activation, retention, revenue, referral}; goods = {acquisition, purchase, repeat/reorder}; services = {lead, qualified, proposal, delivery}; **marketplace = a two-sided spine** {supply-acquisition, supply-activation, demand-acquisition, demand-activation, match/first-transaction, liquidity}. Map every event to exactly one stage; **for a marketplace, also tag its side (supply / demand / cross-side)** so supply-side and liquidity events can map — a single demand-side column can't hold them.
 - **Ladder rung** ties the event to the **offer ladder from `/offer-architect`** (entry → core → flagship → expansion), so revenue events line up with the monetization model.
 - **Consent** = the tier that must be granted before the event may fire.
 - **PII** = must read **none** for every row. A row that needs PII is a design bug — move the identifier to the app DB and emit a UUID reference.
@@ -60,7 +75,7 @@ The tracking plan is the **single source of truth** — a versioned table (Airta
 
 - **North-star** → the precise event query that computes it (usually a distinct-user count over a trailing window across the core-value-action events).
 - **Leading inputs** → product/funnel events (activation rate = a funnel between two events; adherence/depth = a per-user event count; retention = a cohort return query). These are `analytics-stack`'s home turf.
-- **Money strip (lagging)** → **`finance-ops` owns the definitions** (Engaged MRR, NRR, CAC payback) — pull them; don't invent. Pipeline $ → **`sales-crm`**. Channel CAC + blended payback + the acquisition sub-tree → **`gtm-marketing`**. This skill instruments them against Stripe + CRM + ad data; it doesn't redefine them.
+- **Money strip (lagging)** → **`finance-ops` owns the definitions, in the venture's archetype** (subscription → Engaged MRR/NRR/CAC-payback · goods → AOV/contribution-margin/repeat-rate/MER · services → utilization/realization/revenue-per-head · **marketplace → GMV/take-rate/both-sided-retention/liquidity, with time-to-match as the health strip**) — pull them; don't invent, and **never default to the MRR strip** (it is one archetype's, per "First, read the archetype"). Pipeline $ → **`sales-crm`**. Channel CAC + blended payback + the acquisition sub-tree → **`gtm-marketing`**. This skill instruments them against the archetype's system of record (Stripe / commerce platform / PSA / marketplace ledger) + CRM + ad data; it doesn't redefine them.
 
 Deliver the tree as: `node → [leading/lagging] → sourcing event(s)/table → owning domain → query/tool`. That is the bridge from an abstract KPI framework to a board that recomputes from live data — and it is where the KPI→P&L link (`finance-ops`) and the funnel (`sales-crm`/`gtm-marketing`) physically connect.
 
@@ -124,7 +139,7 @@ Read **`dataviz` before writing the first line of any chart or dashboard** — i
 
 ---
 
-## Worked example — Executive Edge OS (the deliverable, abridged)
+## Worked example — Executive Edge OS (the subscription / SaaS archetype; the deliverable, abridged)
 
 **Input:** stand up the analytics backbone for Executive Edge (health-tech SaaS, solely owned, live revenue, US, **PHI in scope**). KPI framework pulled from `/metrics-dashboard` (WAPA north-star + money strip); money definitions from `finance-ops`; the venture already runs GA4 + PostHog + Sentry per its context.
 
@@ -189,4 +204,4 @@ The method holds with zero clinical/SaaS leakage:
 - **Experiments:** an A/B on a reservation-page change (primary = reservation completion rate; guardrail = no-show rate), sized the same way.
 - **Governance:** consent + GDPR/CCPA still apply; the HIPAA callout does not (no PHI) — the **regulatory surface drives the governance posture**, which is exactly why it's read from the venture context, never hard-coded.
 
-The measurement discipline — instrument the core value action, compose the KPI framework, one primary metric per test, no PII in properties, no vanity primary — is industry-agnostic. What changes is the *event stream source* and the *regime*, both read from the active venture context.
+The measurement discipline — instrument the core value action, compose the KPI framework, one primary metric per test, no PII in properties, no vanity primary — is industry-agnostic. What changes is the **funnel shape and the money strip (the archetype)**, the *event stream source*, and the *regime* — all read from the active venture context, never hard-coded.
