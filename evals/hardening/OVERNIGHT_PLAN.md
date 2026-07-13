@@ -23,6 +23,15 @@ the ranked substantive proposals for Tony's morning review. Do not exceed the ca
 **State check on each re-invocation:** `ls evals/hardening/run_*` to count completed cycles →
 decide launch-next vs consolidate.
 
-**Tomorrow (needs Tony):** 2-min private GitHub repo → flip this harness into a real nightly
-scheduled task (create_trigger) that clones, runs, commits findings, notifies. Also resolves
-the private-clone credential design then.
+**Durability (set up Jul 13):** the framework is pushed to GitHub `ajquintal/founder-os` (remote
+`origin`, branch `main`). The harness script is committed at `evals/hardening/harness.js`. So even
+if this cloud session is lost, nothing is gone — the framework, the harness, and all pushed
+findings live on GitHub. On each cycle + at consolidation, commit results and push to `origin main`
+(best-effort; credentials come from this session's context — NEVER write the PAT to any file, log,
+or commit). If a push can't authenticate (PAT not in context), leave results in the cloud FS and
+they get pushed at the morning consolidation instead.
+
+**Tomorrow (needs Tony, in daylight):** flip this into a proper RECURRING nightly task. Options to
+decide together: (a) a fresh-session `create_trigger` that clones from GitHub and runs `harness.js`
+— needs a secure way to give that session the PAT (not decided tonight, to avoid putting the token
+in a trigger prompt); or (b) a GitHub Actions runner. Also: rotate/revoke tonight's PAT.
