@@ -12,6 +12,21 @@ export const meta = {
 const REPO = '/home/claude/founder-os'
 const runDir = args.runDir
 const archetype = args.archetype
+// Fail loud if config didn't arrive. In a scheduled/headless run on 2026-07-13
+// (run_20260713_181052), Workflow `args` did NOT propagate into this script: the invent
+// agent silently freelanced the wrong archetype and wrote to the wrong path. Workflow
+// scripts have no filesystem access, so when args are missing the only reliable fix is to
+// instantiate a run-specific copy of this file with runDir/archetype hardcoded. This guard
+// turns that silent failure into an immediate error instead of burning a full ~12-agent run.
+if (!runDir || !archetype) {
+  throw new Error(
+    'founder-os hardening harness: runDir and archetype are REQUIRED but missing ' +
+    '(runDir=' + JSON.stringify(runDir) + ', archetype=' + JSON.stringify(archetype) + '). ' +
+    'Pass them via Workflow args {runDir, archetype}, or run a run-specific copy with them ' +
+    'hardcoded. NOTE: scheduled/headless sessions in this environment did not reliably ' +
+    'propagate Workflow args — prefer a hardcoded run-specific instantiation there.'
+  )
+}
 
 const FINDINGS_SCHEMA = {
   type: 'object',
